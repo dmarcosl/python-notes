@@ -18,4 +18,24 @@
         <description>Created after removal of "Firebase" from Python Notes</description>
         <accepts>Firebase.html</accepts>
     </rule>
+    <rule id="5d014120">
+        <description>Created after removal of "Setup" from Python Notes</description>
+        <accepts>starter.html</accepts>
+    </rule>
+    <rule id="25564f97">
+        <description>Created after removal of "Index" from Python Notes</description>
+        <accepts>index_md.html</accepts>
+    </rule>
+    <rule id="4d74fdd4">
+        <description>Created after removal of "Python Language Basics" from Python Notes</description>
+        <accepts>Python-Language-Basics.html</accepts>
+    </rule>
+    <rule id="2d9c2bf1">
+        <description>Created after removal of "Advanced Python Module Usage" from Python Notes</description>
+        <accepts>Advanced-Python-Module-Usage.html</accepts>
+    </rule>
+    <rule id="6809cd52">
+        <description>Created after removal of "Frameworks and Libraries" from Python Notes</description>
+        <accepts>Frameworks.html</accepts>
+    </rule>
 </rules>

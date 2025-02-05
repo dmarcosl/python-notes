@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.270201"><title>CSV | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"reading-csv-files","level":0,"title":"Reading CSV files","anchor":"#reading-csv-files"},{"id":"writing-to-csv-files","level":0,"title":"Writing to CSV files","anchor":"#writing-to-csv-files"},{"id":"using-pandas-for-csv","level":0,"title":"Using pandas for CSV","anchor":"#using-pandas-for-csv"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="CSV | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/csv.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="CSV | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T23:08:33.204375"><title>CSV | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"reading-csv-files","level":0,"title":"Reading CSV files","anchor":"#reading-csv-files"},{"id":"writing-to-csv-files","level":0,"title":"Writing to CSV files","anchor":"#writing-to-csv-files"},{"id":"using-pandas-for-csv","level":0,"title":"Using pandas for CSV","anchor":"#using-pandas-for-csv"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="CSV | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/csv.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="CSV | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "WebPage",
     "@id": "writerside-documentation/csv.html#webpage",
@@ -13,24 +13,24 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="CSV" data-main-title="CSV" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced-Python-Module-Usage.md|Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="CSV" id="CSV.md">CSV</h1><section class="chapter"><h2 id="reading-csv-files" data-toc="reading-csv-files">Reading CSV files</h2><p id="z279wnv_6">The <code class="code" id="z279wnv_16">csv</code> module allows for reading CSV files in a simple and efficient manner.</p><p id="z279wnv_7">You can read each row as a <code class="code" id="z279wnv_17">list</code> or as a <code class="code" id="z279wnv_18">dictionary</code>, depending on your needs.</p><p id="z279wnv_8">Example of reading as <code class="code" id="z279wnv_19">list</code>:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="CSV" data-main-title="CSV" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="CSV" id="CSV.md">CSV</h1><section class="chapter"><h2 id="reading-csv-files" data-toc="reading-csv-files">Reading CSV files</h2><p id="vm9oej_6">The <code class="code" id="vm9oej_16">csv</code> module allows for reading CSV files in a simple and efficient manner.</p><p id="vm9oej_7">You can read each row as a <code class="code" id="vm9oej_17">list</code> or as a <code class="code" id="vm9oej_18">dictionary</code>, depending on your needs.</p><p id="vm9oej_8">Example of reading as <code class="code" id="vm9oej_19">list</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 with open('example.csv', 'r') as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
         print(row)
-</div><p id="z279wnv_10">Output:</p><div class="code-block" data-lang="none">
+</div><p id="vm9oej_10">Output:</p><div class="code-block" data-lang="none">
 ['name', 'age', 'city']
 ['Daniel', '24', 'Madrid']
-</div><p id="z279wnv_12">Example of reading as <code class="code" id="z279wnv_20">dict</code>:</p><div class="code-block" data-lang="python">
+</div><p id="vm9oej_12">Example of reading as <code class="code" id="vm9oej_20">dict</code>:</p><div class="code-block" data-lang="python">
 with open('example.csv', 'r') as file:
     csv_dict_reader = csv.DictReader(file)
     for row in csv_dict_reader:
         print(row)
-</div><p id="z279wnv_14">Output:</p><div class="code-block" data-lang="none">
+</div><p id="vm9oej_14">Output:</p><div class="code-block" data-lang="none">
 {'name': 'Daniel', 'age': '24', 'city': 'Madrid'}
-</div></section><section class="chapter"><h2 id="writing-to-csv-files" data-toc="writing-to-csv-files">Writing to CSV files</h2><p id="z279wnv_21">You can write data to CSV files by using <code class="code" id="z279wnv_26">.writer()</code> for a list or <code class="code" id="z279wnv_27">.DictWriter()</code> for dictionaries.</p><p id="z279wnv_22">Example of writing as <code class="code" id="z279wnv_28">list</code>:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="writing-to-csv-files" data-toc="writing-to-csv-files">Writing to CSV files</h2><p id="vm9oej_21">You can write data to CSV files by using <code class="code" id="vm9oej_26">.writer()</code> for a list or <code class="code" id="vm9oej_27">.DictWriter()</code> for dictionaries.</p><p id="vm9oej_22">Example of writing as <code class="code" id="vm9oej_28">list</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 data = [['Name', 'Age', 'City'], ['Daniel', 24, 'Madrid'], ['Álex', 23, 'Gijón']]
@@ -38,7 +38,7 @@ data = [['Name', 'Age', 'City'], ['Daniel', 24, 'Madrid'], ['Álex', 23, 'Gijón
 with open('output.csv', 'w', newline='') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerows(data)
-</div><p id="z279wnv_24">Example of writing as <code class="code" id="z279wnv_29">dict</code>:</p><div class="code-block" data-lang="python">
+</div><p id="vm9oej_24">Example of writing as <code class="code" id="vm9oej_29">dict</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 data = [{'Name': 'Daniel', 'Age': 24, 'City': 'Madrid'},
@@ -49,19 +49,19 @@ with open('output.csv', 'w', newline='') as file:
     csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
     csv_writer.writeheader()
     csv_writer.writerows(data)
-</div></section><section class="chapter"><h2 id="using-pandas-for-csv" data-toc="using-pandas-for-csv">Using pandas for CSV</h2><p id="z279wnv_30"><code class="code" id="z279wnv_39">pandas</code> provides powerful functionality for reading, writing, and manipulating CSV data.</p><p id="z279wnv_31">It is highly recommended for handling large datasets efficiently.</p><p id="z279wnv_32">Must be installed with <code class="code" id="z279wnv_40">pip</code>.</p><p id="z279wnv_33">Example of writing with <code class="code" id="z279wnv_41">pandas</code>:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="using-pandas-for-csv" data-toc="using-pandas-for-csv">Using pandas for CSV</h2><p id="vm9oej_30"><code class="code" id="vm9oej_39">pandas</code> provides powerful functionality for reading, writing, and manipulating CSV data.</p><p id="vm9oej_31">It is highly recommended for handling large datasets efficiently.</p><p id="vm9oej_32">Must be installed with <code class="code" id="vm9oej_40">pip</code>.</p><p id="vm9oej_33">Example of writing with <code class="code" id="vm9oej_41">pandas</code>:</p><div class="code-block" data-lang="python">
 import pandas as pd
 
 data = {'Name': ['Daniel', 'Álex'], 'Age': [24, 23], 'City': ['Madrid', 'Gijón']}
 df = pd.DataFrame(data)
 
 df.to_csv('example.csv', index=False)
-</div><p id="z279wnv_35">Example of reading with <code class="code" id="z279wnv_42">pandas</code>:</p><div class="code-block" data-lang="python">
+</div><p id="vm9oej_35">Example of reading with <code class="code" id="vm9oej_42">pandas</code>:</p><div class="code-block" data-lang="python">
 import pandas as pd
 
 df = pd.read_csv('example.csv')
 print(df)
-</div><p id="z279wnv_37">Output:</p><div class="code-block" data-lang="none">
+</div><p id="vm9oej_37">Output:</p><div class="code-block" data-lang="none">
 #     Name  Age       City
 0   Daniel   24     Madrid
 1     Álex   23      Gijón
