@@ -1,0 +1,76 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.273349"><title>SQLite3 | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"connecting-to-an-sqlite-database","level":0,"title":"Connecting to an SQLite database","anchor":"#connecting-to-an-sqlite-database"},{"id":"creating-tables-and-inserting-data","level":0,"title":"Creating tables and inserting data","anchor":"#creating-tables-and-inserting-data"},{"id":"querying-the-database","level":0,"title":"Querying the database","anchor":"#querying-the-database"},{"id":"handling-transactions","level":0,"title":"Handling transactions","anchor":"#handling-transactions"},{"id":"error-handling","level":0,"title":"Error Handling","anchor":"#error-handling"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="SQLite3 | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/sqlite3.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="SQLite3 | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/sqlite3.html#webpage",
+    "url": "writerside-documentation/sqlite3.html",
+    "name": "SQLite3 | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="SQLite3" data-main-title="SQLite3" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced-Python-Module-Usage.md|Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="SQLite3" id="SQLite3.md">SQLite3</h1><section class="chapter"><h2 id="connecting-to-an-sqlite-database" data-toc="connecting-to-an-sqlite-database">Connecting to an SQLite database</h2><p id="a5zqsa_8">SQLite3 is a lightweight database that doesn&rsquo;t require server processes and allows accessing the database using a variant of SQL.</p><p id="a5zqsa_9">You can connect to an SQLite database using the <code class="code" id="a5zqsa_14">sqlite3</code> module.</p><p id="a5zqsa_10">If the database does not exist, it will be created automatically.</p><p id="a5zqsa_11">Example:</p><div class="code-block" data-lang="python">
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+
+conn.close()
+</div><p id="a5zqsa_13">Always close the connection when done.</p></section><section class="chapter"><h2 id="creating-tables-and-inserting-data" data-toc="creating-tables-and-inserting-data">Creating tables and inserting data</h2><p id="a5zqsa_15">SQLite3 uses cursors to interact with the database.</p><p id="a5zqsa_16">A cursor is an object used to execute SQL queries and fetch results from a SQLite database.</p><p id="a5zqsa_17">Example of creating a table:</p><div class="code-block" data-lang="python">
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        age INTEGER
+    )
+''')
+conn.commit()
+</div><p id="a5zqsa_19">Example of inserting a row and return its index:</p><div class="code-block" data-lang="python">
+cursor.execute('''
+    INSERT INTO users (name, age)
+    VALUES (?, ?)
+''', ('Daniel', 24))
+conn.commit()
+
+row_id = cursor.lastrowid
+</div><p id="a5zqsa_21">Example of inserting multiple rows:</p><div class="code-block" data-lang="python">
+users = [('Daniel', 24), ('Álex', 23)]
+cursor.executemany('''
+    INSERT INTO users (name, age)
+    VALUES (?, ?)
+''', users)
+
+conn.commit()
+</div></section><section class="chapter"><h2 id="querying-the-database" data-toc="querying-the-database">Querying the database</h2><p id="a5zqsa_23">Example of fetching all data:</p><div class="code-block" data-lang="python">
+cursor.execute('SELECT * FROM users')
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+</div><p id="a5zqsa_25">Output:</p><div class="code-block" data-lang="none">
+(1, 'Daniel', 24)
+(2, 'Álex', 23)
+</div><p id="a5zqsa_27">Example of fetching a single row:</p><div class="code-block" data-lang="python">
+user_id = 1
+
+cursor.execute('SELECT * FROM users WHERE id = ?', (user_id,))
+row = cursor.fetchone()
+print(row)
+</div><p id="a5zqsa_29">Output:</p><div class="code-block" data-lang="none">
+(1, 'Daniel', 24)
+</div></section><section class="chapter"><h2 id="handling-transactions" data-toc="handling-transactions">Handling transactions</h2><p id="a5zqsa_31">SQLite supports transactions that allow multiple operations to be executed as a single unit.</p><p id="a5zqsa_32">You can use <code class="code" id="a5zqsa_33">commit()</code> to save the changes or <code class="code" id="a5zqsa_34">rollback()</code> to revert them.</p></section><section class="chapter"><h2 id="error-handling" data-toc="error-handling">Error Handling</h2><p id="a5zqsa_35">SQLite operations may raise exceptions, and it is important to handle errors appropriately.</p><p id="a5zqsa_36">Examples:</p><div class="code-block" data-lang="python">
+try:
+    cursor.execute('SELECT * FROM non_existent_table')
+except sqlite3.DatabaseError as e:
+    print(f'Database error occurred: {e}')
+</div><div class="code-block" data-lang="python">
+try:
+    cursor.execute('INSERT INTO users (id, name, age) VALUES (?, ?)', (1, 'Daniel', 24))
+    cursor.execute('INSERT INTO users (id, name, age) VALUES (?, ?)', (1, 'Álex', 23))
+    conn.commit()
+except sqlite3.IntegrityError as e:
+    print(f'Integrity error occurred: {e}')
+</div></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="csv.html" class="navigation-links__prev">CSV</a><a href="json.html" class="navigation-links__next">JSON</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T02:32:52.643251"><title>Iteration | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"for-loop","level":0,"title":"For Loop","anchor":"#for-loop"},{"id":"while-loop","level":0,"title":"While Loop","anchor":"#while-loop"},{"id":"iterators","level":0,"title":"Iterators","anchor":"#iterators"},{"id":"range","level":0,"title":"Range","anchor":"#range"},{"id":"continue-in-loops","level":0,"title":"continue in Loops","anchor":"#continue-in-loops"},{"id":"break-in-loops","level":0,"title":"break in Loops","anchor":"#break-in-loops"},{"id":"else-in-loops","level":0,"title":"else in Loops","anchor":"#else-in-loops"},{"id":"enumerating-over-a-collection-with-enumerate","level":0,"title":"Enumerating over a collection with enumerate","anchor":"#enumerating-over-a-collection-with-enumerate"},{"id":"using-zip-to-iterate-over-multiple-collections","level":0,"title":"Using zip() to iterate over multiple collections","anchor":"#using-zip-to-iterate-over-multiple-collections"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Iteration | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/iteration.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Iteration | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.277906"><title>Iteration | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"for-loop","level":0,"title":"For Loop","anchor":"#for-loop"},{"id":"while-loop","level":0,"title":"While Loop","anchor":"#while-loop"},{"id":"iterators","level":0,"title":"Iterators","anchor":"#iterators"},{"id":"range","level":0,"title":"Range","anchor":"#range"},{"id":"continue-in-loops","level":0,"title":"continue in Loops","anchor":"#continue-in-loops"},{"id":"break-in-loops","level":0,"title":"break in Loops","anchor":"#break-in-loops"},{"id":"else-in-loops","level":0,"title":"else in Loops","anchor":"#else-in-loops"},{"id":"enumerating-over-a-collection-with-enumerate","level":0,"title":"Enumerating over a collection with enumerate","anchor":"#enumerating-over-a-collection-with-enumerate"},{"id":"using-zip-to-iterate-over-multiple-collections","level":0,"title":"Using zip() to iterate over multiple collections","anchor":"#using-zip-to-iterate-over-multiple-collections"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Iteration | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/iteration.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Iteration | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "WebPage",
     "@id": "writerside-documentation/iteration.html#webpage",
@@ -13,70 +13,70 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Iteration" data-main-title="Iteration" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python-Language-Basics.md|Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Iteration" id="Iteration.md">Iteration</h1><section class="chapter"><h2 id="for-loop" data-toc="for-loop">For Loop</h2><p id="h5195s_12">The <code class="code" id="h5195s_18">for</code> loop allows iteration over elements in a collection (such as lists, strings, or ranges).</p><section class="chapter"><h3 id="iterating-over-a-list" data-toc="iterating-over-a-list">Iterating Over a List</h3><p id="h5195s_19">Example:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Iteration" data-main-title="Iteration" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python-Language-Basics.md|Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Iteration" id="Iteration.md">Iteration</h1><section class="chapter"><h2 id="for-loop" data-toc="for-loop">For Loop</h2><p id="ut4ztw_12">The <code class="code" id="ut4ztw_18">for</code> loop allows iteration over elements in a collection (such as lists, strings, or ranges).</p><section class="chapter"><h3 id="iterating-over-a-list" data-toc="iterating-over-a-list">Iterating Over a List</h3><p id="ut4ztw_19">Example:</p><div class="code-block" data-lang="python">
 colors = ['Red', 'Black', 'White']
 for color in colors:
     print(f'Is {color} your favorite?')
-</div><p id="h5195s_21">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_21">Output:</p><div class="code-block" data-lang="none">
 Is Red your favorite?
 Is Black your favorite?
 Is White your favorite?
-</div></section><section class="chapter"><h3 id="iterating-over-numbers-and-calculations" data-toc="iterating-over-numbers-and-calculations">Iterating Over Numbers and Calculations</h3><p id="h5195s_23">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="iterating-over-numbers-and-calculations" data-toc="iterating-over-numbers-and-calculations">Iterating Over Numbers and Calculations</h3><p id="ut4ztw_23">Example:</p><div class="code-block" data-lang="python">
 for number in [1, 2, 3, 4]:
     double = number * 2
     print(f'Twice {number} is {double}')
-</div><p id="h5195s_25">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_25">Output:</p><div class="code-block" data-lang="none">
 Twice 1 is 2
 Twice 2 is 4
 Twice 3 is 6
 Twice 4 is 8
-</div></section><section class="chapter"><h3 id="iterating-over-characters-of-a-string" data-toc="iterating-over-characters-of-a-string">Iterating Over Characters of a String</h3><p id="h5195s_27">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="iterating-over-characters-of-a-string" data-toc="iterating-over-characters-of-a-string">Iterating Over Characters of a String</h3><p id="ut4ztw_27">Example:</p><div class="code-block" data-lang="python">
 for character in 'hello':
     print(character)
-</div><p id="h5195s_29">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_29">Output:</p><div class="code-block" data-lang="none">
 h
 e
 l
 l
 o
-</div></section><section class="chapter"><h3 id="iterating-over-a-range-of-numbers" data-toc="iterating-over-a-range-of-numbers">Iterating Over a Range of Numbers</h3><p id="h5195s_31">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="iterating-over-a-range-of-numbers" data-toc="iterating-over-a-range-of-numbers">Iterating Over a Range of Numbers</h3><p id="ut4ztw_31">Example:</p><div class="code-block" data-lang="python">
 for i in range(0, 50, 5):
     print(i, end=' ')
-</div><p id="h5195s_33">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_33">Output:</p><div class="code-block" data-lang="none">
 0 5 10 15 20 25 30 35 40 45
-</div></section><section class="chapter"><h3 id="skipping-items-in-a-list" data-toc="skipping-items-in-a-list">Skipping Items in a List</h3><p id="h5195s_35">You can use slicing to iterate over every other item in the list</p><p id="h5195s_36">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="skipping-items-in-a-list" data-toc="skipping-items-in-a-list">Skipping Items in a List</h3><p id="ut4ztw_35">You can use slicing to iterate over every other item in the list</p><p id="ut4ztw_36">Example:</p><div class="code-block" data-lang="python">
 colors = ['Red', 'Black', 'Yellow', 'Green', 'Blue', 'Purple']
 for color in colors[::2]:
     print(color, end=' ')
-</div><p id="h5195s_38">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_38">Output:</p><div class="code-block" data-lang="none">
 Red Yellow Blue
-</div></section></section><section class="chapter"><h2 id="while-loop" data-toc="while-loop">While Loop</h2><p id="h5195s_40">The <code class="code" id="h5195s_45">while</code> loop repeats a block of code as long as a given condition is <code class="code" id="h5195s_46">True</code>.</p><p id="h5195s_41">Example:</p><div class="code-block" data-lang="python">
+</div></section></section><section class="chapter"><h2 id="while-loop" data-toc="while-loop">While Loop</h2><p id="ut4ztw_40">The <code class="code" id="ut4ztw_45">while</code> loop repeats a block of code as long as a given condition is <code class="code" id="ut4ztw_46">True</code>.</p><p id="ut4ztw_41">Example:</p><div class="code-block" data-lang="python">
 countdown = 10
 while countdown &gt;= 0:
     print(countdown, end=' ')
     countdown -= 1
-</div><p id="h5195s_43">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_43">Output:</p><div class="code-block" data-lang="none">
 10 9 8 7 6 5 4 3 2 1 0
-</div></section><section class="chapter"><h2 id="iterators" data-toc="iterators">Iterators</h2><p id="h5195s_47">An iterator allows you to traverse through a collection, such as a <code class="code" id="h5195s_54">list</code>, <code class="code" id="h5195s_55">tuple</code>, <code class="code" id="h5195s_56">set</code>, or <code class="code" id="h5195s_57">string</code>.</p><p id="h5195s_48">Once an iterator has exhausted its values, it will raise an error if you attempt to retrieve another element.</p><p id="h5195s_49">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="iterators" data-toc="iterators">Iterators</h2><p id="ut4ztw_47">An iterator allows you to traverse through a collection, such as a <code class="code" id="ut4ztw_54">list</code>, <code class="code" id="ut4ztw_55">tuple</code>, <code class="code" id="ut4ztw_56">set</code>, or <code class="code" id="ut4ztw_57">string</code>.</p><p id="ut4ztw_48">Once an iterator has exhausted its values, it will raise an error if you attempt to retrieve another element.</p><p id="ut4ztw_49">Example:</p><div class="code-block" data-lang="python">
 colors = ['Red', 'Black', 'Yellow', 'Green', 'Blue', 'Purple']
 iter_color = iter(colors)
 print(next(iter_color))
 print(next(iter_color))
-</div><p id="h5195s_51">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_51">Output:</p><div class="code-block" data-lang="none">
 Red
 Black
-</div><p id="h5195s_53">Behind the scenes, a for loop implicitly calls <code class="code" id="h5195s_58">iter()</code> and <code class="code" id="h5195s_59">next()</code> to iterate over the elements.</p></section><section class="chapter"><h2 id="range" data-toc="range">Range</h2><p id="h5195s_60"><code class="code" id="h5195s_72">range()</code> generates an immutable sequence of numbers and is commonly used for looping a specific number of times in a for loop.</p><p id="h5195s_61">Syntax:</p><div class="code-block" data-lang="python">
+</div><p id="ut4ztw_53">Behind the scenes, a for loop implicitly calls <code class="code" id="ut4ztw_58">iter()</code> and <code class="code" id="ut4ztw_59">next()</code> to iterate over the elements.</p></section><section class="chapter"><h2 id="range" data-toc="range">Range</h2><p id="ut4ztw_60"><code class="code" id="ut4ztw_72">range()</code> generates an immutable sequence of numbers and is commonly used for looping a specific number of times in a for loop.</p><p id="ut4ztw_61">Syntax:</p><div class="code-block" data-lang="python">
 range(start, stop, step)
-</div><ul class="list _bullet" id="h5195s_63"><li class="list__item" id="h5195s_73"><p>start: Starting value (inclusive)</p></li><li class="list__item" id="h5195s_74"><p>stop: Ending value (exclusive)</p></li><li class="list__item" id="h5195s_75"><p>step: Increment (default is 1)</p></li></ul><p id="h5195s_64">Example:</p><div class="code-block" data-lang="python">
+</div><ul class="list _bullet" id="ut4ztw_63"><li class="list__item" id="ut4ztw_73"><p>start: Starting value (inclusive)</p></li><li class="list__item" id="ut4ztw_74"><p>stop: Ending value (exclusive)</p></li><li class="list__item" id="ut4ztw_75"><p>step: Increment (default is 1)</p></li></ul><p id="ut4ztw_64">Example:</p><div class="code-block" data-lang="python">
 list(range(0, 10, 2))
-</div><p id="h5195s_66">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_66">Output:</p><div class="code-block" data-lang="none">
 [0, 2, 4, 6, 8]
-</div><p id="h5195s_68">The <code class="code" id="h5195s_76">range</code> object only stores the values for start, stop, and step, and <span class="control" id="h5195s_77">does not hold all the numbers in memory</span>.</p><section class="chapter"><h3 id="using-range-with-for-loop" data-toc="using-range-with-for-loop">Using range with For Loop</h3><p id="h5195s_78">Example:</p><div class="code-block" data-lang="python">
+</div><p id="ut4ztw_68">The <code class="code" id="ut4ztw_76">range</code> object only stores the values for start, stop, and step, and <span class="control" id="ut4ztw_77">does not hold all the numbers in memory</span>.</p><section class="chapter"><h3 id="using-range-with-for-loop" data-toc="using-range-with-for-loop">Using range with For Loop</h3><p id="ut4ztw_78">Example:</p><div class="code-block" data-lang="python">
 for i in range(0, 10, 2):
     print(i, end=' ')
-</div><p id="h5195s_80">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_80">Output:</p><div class="code-block" data-lang="none">
 0 2 4 6 8
-</div></section><section class="chapter"><h3 id="range-slicing-and-negative-indices" data-toc="range-slicing-and-negative-indices">Range Slicing and Negative Indices</h3><p id="h5195s_82">You can perform slicing and index lookups on range objects.</p><p id="h5195s_83">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="range-slicing-and-negative-indices" data-toc="range-slicing-and-negative-indices">Range Slicing and Negative Indices</h3><p id="ut4ztw_82">You can perform slicing and index lookups on range objects.</p><p id="ut4ztw_83">Example:</p><div class="code-block" data-lang="python">
 # Containment test
 print(11 in range(0, 20, 2))  # False
 print(10 in range(0, 20, 2))  # True
@@ -89,56 +89,56 @@ print(range(0, 20, 2)[5])  # 10
 
 # Accessing elements by negative index
 print(range(0, 20, 2)[-1])  # 18
-</div><p id="h5195s_85">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_85">Output:</p><div class="code-block" data-lang="none">
 False
 True
 5
 10
 18
-</div></section><section class="chapter"><h3 id="reversing-a-range" data-toc="reversing-a-range">Reversing a Range</h3><p id="h5195s_87">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="reversing-a-range" data-toc="reversing-a-range">Reversing a Range</h3><p id="ut4ztw_87">Example:</p><div class="code-block" data-lang="python">
 for i in range(0, 10)[::-1]:
     print(i, end=', ')
-</div><p id="h5195s_89">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_89">Output:</p><div class="code-block" data-lang="none">
 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
-</div></section></section><section class="chapter"><h2 id="continue-in-loops" data-toc="continue-in-loops">continue in Loops</h2><p id="h5195s_91">The <code class="code" id="h5195s_96">continue</code> statement skips the current iteration and continues with the next iteration of the loop.</p><p id="h5195s_92">Example:</p><div class="code-block" data-lang="python">
+</div></section></section><section class="chapter"><h2 id="continue-in-loops" data-toc="continue-in-loops">continue in Loops</h2><p id="ut4ztw_91">The <code class="code" id="ut4ztw_96">continue</code> statement skips the current iteration and continues with the next iteration of the loop.</p><p id="ut4ztw_92">Example:</p><div class="code-block" data-lang="python">
 for i in range(5):
     if i == 3:
         continue
     print(i, end=' ')
-</div><p id="h5195s_94">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_94">Output:</p><div class="code-block" data-lang="none">
 0 1 2 4
-</div></section><section class="chapter"><h2 id="break-in-loops" data-toc="break-in-loops">break in Loops</h2><p id="h5195s_97">The <code class="code" id="h5195s_102">break</code> statement exits the loop.</p><p id="h5195s_98">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="break-in-loops" data-toc="break-in-loops">break in Loops</h2><p id="ut4ztw_97">The <code class="code" id="ut4ztw_102">break</code> statement exits the loop.</p><p id="ut4ztw_98">Example:</p><div class="code-block" data-lang="python">
 for i in range(5):
     if i == 2:
         print('Breaking the loop')
         break
     print(i)
-</div><p id="h5195s_100">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_100">Output:</p><div class="code-block" data-lang="none">
 0
 1
 Breaking the loop
-</div></section><section class="chapter"><h2 id="else-in-loops" data-toc="else-in-loops">else in Loops</h2><p id="h5195s_103">An <code class="code" id="h5195s_115">else</code> block can be used with <code class="code" id="h5195s_116">for</code> and <code class="code" id="h5195s_117">while</code> loops. It will run if the loop completes normally, without hitting a break statement.</p><p id="h5195s_104">Example with <code class="code" id="h5195s_118">for</code>:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="else-in-loops" data-toc="else-in-loops">else in Loops</h2><p id="ut4ztw_103">An <code class="code" id="ut4ztw_115">else</code> block can be used with <code class="code" id="ut4ztw_116">for</code> and <code class="code" id="ut4ztw_117">while</code> loops. It will run if the loop completes normally, without hitting a break statement.</p><p id="ut4ztw_104">Example with <code class="code" id="ut4ztw_118">for</code>:</p><div class="code-block" data-lang="python">
 for number in range(5):
     print(number, end=' ')
 else:
     print('Loop completed without interruption.')
-</div><p id="h5195s_106">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_106">Output:</p><div class="code-block" data-lang="none">
 0 1 2 3 4 Loop completed without interruption.
-</div><p id="h5195s_108">Example with <code class="code" id="h5195s_119">while</code>:</p><div class="code-block" data-lang="python">
+</div><p id="ut4ztw_108">Example with <code class="code" id="ut4ztw_119">while</code>:</p><div class="code-block" data-lang="python">
 countdown = 5
 while countdown &gt; 0:
     print(countdown)
     countdown -= 1
 else:
     print('Countdown finished!')
-</div><p id="h5195s_110">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_110">Output:</p><div class="code-block" data-lang="none">
 5
 4
 3
 2
 1
 Countdown finished!
-</div><p id="h5195s_112">Example with <code class="code" id="h5195s_120">break</code>:</p><div class="code-block" data-lang="python">
+</div><p id="ut4ztw_112">Example with <code class="code" id="ut4ztw_120">break</code>:</p><div class="code-block" data-lang="python">
 for number in range(5):
     if number == 3:
         break
@@ -149,22 +149,22 @@ else:
 0
 1
 2
-</div></section><section class="chapter"><h2 id="enumerating-over-a-collection-with-enumerate" data-toc="enumerating-over-a-collection-with-enumerate">Enumerating over a collection with enumerate</h2><p id="h5195s_121">The <code class="code" id="h5195s_126">enumerate()</code> function is useful when you need both the index and the value in a loop.</p><p id="h5195s_122">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="enumerating-over-a-collection-with-enumerate" data-toc="enumerating-over-a-collection-with-enumerate">Enumerating over a collection with enumerate</h2><p id="ut4ztw_121">The <code class="code" id="ut4ztw_126">enumerate()</code> function is useful when you need both the index and the value in a loop.</p><p id="ut4ztw_122">Example:</p><div class="code-block" data-lang="python">
 colors = ['Red', 'Black', 'Yellow', 'Green']
 for index, color in enumerate(colors):
     print(f'{index}: {color}')
-</div><p id="h5195s_124">Output:</p><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_124">Output:</p><div class="code-block" data-lang="none">
 0: Red
 1: Black
 2: Yellow
 3: Green
-</div></section><section class="chapter"><h2 id="using-zip-to-iterate-over-multiple-collections" data-toc="using-zip-to-iterate-over-multiple-collections">Using zip() to iterate over multiple collections</h2><p id="h5195s_127">The <code class="code" id="h5195s_131">zip()</code> function allows to iterate over several collections at the same time.</p><p id="h5195s_128">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="using-zip-to-iterate-over-multiple-collections" data-toc="using-zip-to-iterate-over-multiple-collections">Using zip() to iterate over multiple collections</h2><p id="ut4ztw_127">The <code class="code" id="ut4ztw_132">zip()</code> function allows to iterate over several collections at the same time.</p><p id="ut4ztw_128">Example:</p><div class="code-block" data-lang="python">
 names = ['Alice', 'Bob', 'Charlie']
 scores = [85, 92, 78]
 
 for name, score in zip(names, scores):
     print(f'{name}: {score}')
-</div><div class="code-block" data-lang="none">
+</div><p id="ut4ztw_130">Output:</p><div class="code-block" data-lang="none">
 Alice: 85
 Bob: 92
 Charlie: 78

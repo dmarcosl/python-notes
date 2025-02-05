@@ -21,4 +21,20 @@
         <toc-element topic="Classes-and-Objects.md"/>
         <toc-element topic="Importing-Modules.md"/>
     </toc-element>
+    <toc-element topic="Advanced-Python-Module-Usage.md">
+        <toc-element topic="Files.md"/>
+        <toc-element topic="CSV.md"/>
+        <toc-element topic="SQLite3.md"/>
+        <toc-element topic="JSON.md"/>
+        <toc-element topic="XML.md"/>
+        <toc-element topic="Regular-Expressions.md"/>
+    </toc-element>
+    <toc-element topic="Frameworks.md">
+        <toc-element topic="Requests.md"/>
+        <toc-element topic="Flask.md"/>
+        <toc-element topic="FastAPI.md"/>
+        <toc-element topic="Celery.md"/>
+        <toc-element topic="SQLAlchemy.md"/>
+        <toc-element topic="Asyncio.md"/>
+    </toc-element>
 </instance-profile>

@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.275716"><title>JSON | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"reading-and-writing-json-files","level":0,"title":"Reading and writing JSON files","anchor":"#reading-and-writing-json-files"},{"id":"parsing-json-data","level":0,"title":"Parsing JSON data","anchor":"#parsing-json-data"},{"id":"handling-complex-data-structures-in-json","level":0,"title":"Handling complex data structures in JSON","anchor":"#handling-complex-data-structures-in-json"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="JSON | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/json.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="JSON | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/json.html#webpage",
+    "url": "writerside-documentation/json.html",
+    "name": "JSON | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="JSON" data-main-title="JSON" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced-Python-Module-Usage.md|Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="JSON" id="JSON.md">JSON</h1><section class="chapter"><h2 id="reading-and-writing-json-files" data-toc="reading-and-writing-json-files">Reading and writing JSON files</h2><p id="surl5t_6">The <code class="code" id="surl5t_14">json</code> module allows reading and writing JSON files using <code class="code" id="surl5t_15">json.load()</code> and <code class="code" id="surl5t_16">json.dump()</code>.</p><p id="surl5t_7">JSON objects are mapped to <code class="code" id="surl5t_17">dict</code>, while JSON arrays are converted into <code class="code" id="surl5t_18">list</code>. Other native types, such as strings, integers, floats, and booleans, are also directly supported.</p><p id="surl5t_8">Example writing a <code class="code" id="surl5t_19">dict</code> to a JSON file:</p><div class="code-block" data-lang="python">
+import json
+
+data = {'name': 'Daniel', 'age': 24}
+with open('data.json', 'w') as file:
+    json.dump(data, file)
+</div><p id="surl5t_10">Example reading a JSON file into a <code class="code" id="surl5t_20">dict</code>:</p><div class="code-block" data-lang="python">
+with open('data.json', 'r') as file:
+    loaded_data = json.load(file)
+print(loaded_data)
+</div><p id="surl5t_12">Output:</p><div class="code-block" data-lang="python">
+{'name': 'Daniel', 'age': 24}
+</div></section><section class="chapter"><h2 id="parsing-json-data" data-toc="parsing-json-data">Parsing JSON data</h2><p id="surl5t_21">To parse a JSON <code class="code" id="surl5t_26">string</code> into a Python object, use <code class="code" id="surl5t_27">json.loads()</code>.</p><p id="surl5t_22">Example:</p><div class="code-block" data-lang="python">
+json_string = '{&quot;name&quot;: &quot;Daniel&quot;, &quot;age&quot;: 24}'
+parsed_data = json.loads(json_string)
+print(parsed_data['name'])
+</div><p id="surl5t_24">Output:</p><div class="code-block" data-lang="none">
+Daniel
+</div></section><section class="chapter"><h2 id="handling-complex-data-structures-in-json" data-toc="handling-complex-data-structures-in-json">Handling complex data structures in JSON</h2><p id="surl5t_28">For custom objects, define a function for serialization.</p><p id="surl5t_29">Example:</p><div class="code-block" data-lang="python">
+class City:
+    def __init__(self, name, temperature):
+        self.name = name
+        self.temperature = temperature
+
+def city_to_dict(city):
+    return {'name': city.name, 'temperature': city.temperature}
+
+city = City('Madrid', 45)
+json_data = json.dumps(city, default=city_to_dict)
+print(json_data)
+</div><p id="surl5t_31">Output:</p><div class="code-block" data-lang="python">
+{'name': 'Madrid', 'temperature': 45}
+</div></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="sqlite3.html" class="navigation-links__prev">SQLite3</a><a href="xml.html" class="navigation-links__next">XML</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

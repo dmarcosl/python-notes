@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.270275"><title>Requests | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"installing-requests","level":0,"title":"Installing Requests","anchor":"#installing-requests"},{"id":"making-http-requests","level":0,"title":"Making HTTP Requests","anchor":"#making-http-requests"},{"id":"handling-query-parameters","level":0,"title":"Handling Query Parameters","anchor":"#handling-query-parameters"},{"id":"sending-json-data-in-a-post-request","level":0,"title":"Sending JSON Data in a POST Request","anchor":"#sending-json-data-in-a-post-request"},{"id":"handling-headers-and-authentication","level":0,"title":"Handling Headers and Authentication","anchor":"#handling-headers-and-authentication"},{"id":"downloading-files","level":0,"title":"Downloading Files","anchor":"#downloading-files"},{"id":"response-attributes-and-methods","level":0,"title":"Response Attributes and Methods","anchor":"#response-attributes-and-methods"},{"id":"error-handling","level":0,"title":"Error Handling","anchor":"#error-handling"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Requests | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/requests.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Requests | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/requests.html#webpage",
+    "url": "writerside-documentation/requests.html",
+    "name": "Requests | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="Requests" data-main-title="Requests" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks.md|Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Requests" id="Requests.md">Requests</h1><p id="hjqwrp_3">The <code class="code" id="hjqwrp_12">requests</code> library simplifies HTTP requests, making it easy to interact with web APIs and retrieve web content.</p><section class="chapter"><h2 id="installing-requests" data-toc="installing-requests">Installing Requests</h2><div class="code-block" data-lang="bash">
+pip install requests
+</div></section><section class="chapter"><h2 id="making-http-requests" data-toc="making-http-requests">Making HTTP Requests</h2><ul class="list _bullet" id="hjqwrp_14"><li class="list__item" id="hjqwrp_17"><p><code class="code" id="hjqwrp_21">requests.get(url)</code>: Sends a GET request to retrieve data.</p></li><li class="list__item" id="hjqwrp_18"><p><code class="code" id="hjqwrp_22">requests.post(url, data={})</code>: Sends a POST request with data.</p></li><li class="list__item" id="hjqwrp_19"><p><code class="code" id="hjqwrp_23">requests.put(url, data={})</code>: Updates a resource.</p></li><li class="list__item" id="hjqwrp_20"><p><code class="code" id="hjqwrp_24">requests.delete(url)</code>: Deletes a resource.</p></li></ul><p id="hjqwrp_15">Example:</p><div class="code-block" data-lang="python">
+import requests
+
+response = requests.get('https://example.com')
+print(response.content)
+</div></section><section class="chapter"><h2 id="handling-query-parameters" data-toc="handling-query-parameters">Handling Query Parameters</h2><p id="hjqwrp_25">Use <code class="code" id="hjqwrp_30">params</code> to send query parameters in a request.</p><p id="hjqwrp_26">Example:</p><div class="code-block" data-lang="python">
+payload = {'userId': 1}
+response = requests.get('https://example.com', params=payload)
+print(response.url)
+</div><p id="hjqwrp_28">Output:</p><div class="code-block" data-lang="none">
+https://example.com/?userId=1
+</div></section><section class="chapter"><h2 id="sending-json-data-in-a-post-request" data-toc="sending-json-data-in-a-post-request">Sending JSON Data in a POST Request</h2><p id="hjqwrp_31">Example:</p><div class="code-block" data-lang="python">
+data = {'title': 'New Post', 'body': 'Content', 'userId': 1}
+response = requests.post('https://example.com', json=data)
+print(response.status_code, response.content)
+</div></section><section class="chapter"><h2 id="handling-headers-and-authentication" data-toc="handling-headers-and-authentication">Handling Headers and Authentication</h2><p id="hjqwrp_33">Example:</p><div class="code-block" data-lang="python">
+headers = {'Authorization': 'Bearer your_token'}
+response = requests.get('https://example.com', headers=headers)
+</div></section><section class="chapter"><h2 id="downloading-files" data-toc="downloading-files">Downloading Files</h2><p id="hjqwrp_35">Example:</p><div class="code-block" data-lang="python">
+response = requests.get('https://example.com/image.jpg')
+with open('image.jpg', 'wb') as file:
+    file.write(response.content)
+</div></section><section class="chapter"><h2 id="response-attributes-and-methods" data-toc="response-attributes-and-methods">Response Attributes and Methods</h2><p id="hjqwrp_37">The <code class="code" id="hjqwrp_41">requests.Response</code> object provides attributes and methods to handle HTTP responses efficiently.</p><ul class="list _bullet" id="hjqwrp_38"><li class="list__item" id="hjqwrp_42"><p><code class="code" id="hjqwrp_51">.status_code</code>: Returns the HTTP status code.</p></li><li class="list__item" id="hjqwrp_43"><p><code class="code" id="hjqwrp_52">.headers</code>: Retrieves response headers as a <code class="code" id="hjqwrp_53">dict</code>.</p></li><li class="list__item" id="hjqwrp_44"><p><code class="code" id="hjqwrp_54">.url</code>: Shows the final URL after redirections.</p></li><li class="list__item" id="hjqwrp_45"><p><code class="code" id="hjqwrp_55">.elapsed</code>: Time taken for the request.</p></li><li class="list__item" id="hjqwrp_46"><p><code class="code" id="hjqwrp_56">.text</code>: Decodes response content as a string.</p></li><li class="list__item" id="hjqwrp_47"><p><code class="code" id="hjqwrp_57">.content</code>: Returns raw binary content.</p></li><li class="list__item" id="hjqwrp_48"><p><code class="code" id="hjqwrp_58">.json()</code>: Parses response as JSON.</p></li><li class="list__item" id="hjqwrp_49"><p><code class="code" id="hjqwrp_59">.history</code>: Shows redirection history.</p></li><li class="list__item" id="hjqwrp_50"><p><code class="code" id="hjqwrp_60">.encoding</code>: Gets/sets encoding for .text.</p></li></ul><p id="hjqwrp_39">Example:</p><div class="code-block" data-lang="python">
+response = requests.get('https://example.com')
+print(response.status_code)              # 200
+print(response.headers['Content-Type'])  # application/json; charset=utf-8
+print(response.url)                      # Final URL
+print(response.elapsed)                  # Response time
+print(response.text)                     # Returns the response as a string
+print(response.content)                  # Returns raw bytes
+print(response.json())                   # Parses JSON response
+print(response.history)                  # List of previous responses
+print(response.encoding)                 # Default encoding (usually utf-8)
+</div></section><section class="chapter"><h2 id="error-handling" data-toc="error-handling">Error Handling</h2><p id="hjqwrp_61">Use <code class="code" id="hjqwrp_64">response.raise_for_status()</code> to handle HTTP errors.</p><p id="hjqwrp_62">Example:</p><div class="code-block" data-lang="python">
+try:
+    response = requests.get('https://example.com/error')
+    response.raise_for_status()
+except requests.exceptions.RequestException as e:
+    print(f'Error: {e}')
+</div></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="frameworks.html" class="navigation-links__prev">Frameworks and Libraries</a><a href="flask.html" class="navigation-links__next">Flask</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

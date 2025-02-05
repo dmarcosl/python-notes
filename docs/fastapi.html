@@ -1,0 +1,89 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.274683"><title>FastAPI | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"introduction-to-fastapi","level":0,"title":"Introduction to FastAPI","anchor":"#introduction-to-fastapi"},{"id":"setting-up-routes-and-handling-requests","level":0,"title":"Setting up routes and handling requests","anchor":"#setting-up-routes-and-handling-requests"},{"id":"dependency-injection-and-middleware","level":0,"title":"Dependency injection and middleware","anchor":"#dependency-injection-and-middleware"},{"id":"validating-request-data-using-pydantic-models","level":0,"title":"Validating request data using Pydantic models","anchor":"#validating-request-data-using-pydantic-models"},{"id":"asynchronous-support-with-fastapi","level":0,"title":"Asynchronous support with FastAPI","anchor":"#asynchronous-support-with-fastapi"},{"id":"fastapi-authentication-mechanisms","level":0,"title":"FastAPI authentication mechanisms","anchor":"#fastapi-authentication-mechanisms"},{"id":"generating-openapi-documentation","level":0,"title":"Generating OpenAPI Documentation","anchor":"#generating-openapi-documentation"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="FastAPI | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/fastapi.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="FastAPI | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/fastapi.html#webpage",
+    "url": "writerside-documentation/fastapi.html",
+    "name": "FastAPI | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="FastAPI" data-main-title="FastAPI" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks.md|Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="FastAPI" id="FastAPI.md">FastAPI</h1><p id="-h4wgal_3">FastAPI is a high-performance web framework for building APIs, designed for asynchronous operations.</p><p id="-h4wgal_4">It simplifies creating RESTful APIs with automatic data validation and OpenAPI documentation.</p><section class="chapter"><h2 id="introduction-to-fastapi" data-toc="introduction-to-fastapi">Introduction to FastAPI</h2><p id="-h4wgal_12">Install FastAPI and an asynchronous WSGI server</p><div class="code-block" data-lang="bash">
+pip install fastapi uvicorn
+</div><p id="-h4wgal_14">Create a new file <code class="code" id="-h4wgal_18">app.py</code> and write the following code to set up a basic FastAPI application:</p><div class="code-block" data-lang="python">
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+def read_root():
+    return {'message': 'Hello, World!'}
+</div><p id="-h4wgal_16">Then run the app using:</p><div class="code-block" data-lang="bash">
+uvicorn app:app --reload
+</div></section><section class="chapter"><h2 id="setting-up-routes-and-handling-requests" data-toc="setting-up-routes-and-handling-requests">Setting up routes and handling requests</h2><p id="-h4wgal_19">Routes in FastAPI define the API endpoints.</p><p id="-h4wgal_20">Request data can be accessed using path parameters, query parameters, and request bodies.</p><div class="code-block" data-lang="python">
+@app.get('/greet/{name}')
+def greet(name: str):
+    return {'message': f'Hello, {name}!'}
+</div></section><section class="chapter"><h2 id="dependency-injection-and-middleware" data-toc="dependency-injection-and-middleware">Dependency injection and middleware</h2><p id="-h4wgal_22">FastAPI supports dependency injection to manage shared resources such as database connections, authentication, etc.</p><p id="-h4wgal_23">You can define dependencies and inject them into routes.</p><div class="code-block" data-lang="python">
+from fastapi import Depends
+
+def get_db():
+    db = 'Database Connection'  # Example dependency
+    return db
+
+@app.get('/items')
+def get_items(db: str = Depends(get_db)):
+    return {'db': db}
+</div><p id="-h4wgal_25">Middleware allows you to handle requests and responses globally.</p><p id="-h4wgal_26">It&rsquo;s useful for tasks like logging, CORS handling, etc.</p><div class="code-block" data-lang="python">
+from fastapi import FastAPI
+from starlette.middleware.base import BaseHTTPMiddleware
+
+class CustomMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers['X-Custom-Header'] = 'Value'
+        return response
+
+app.add_middleware(CustomMiddleware)
+</div></section><section class="chapter"><h2 id="validating-request-data-using-pydantic-models" data-toc="validating-request-data-using-pydantic-models">Validating request data using Pydantic models</h2><p id="-h4wgal_28">FastAPI uses Pydantic models to validate incoming data, ensuring that the correct data types are received.</p><p id="-h4wgal_29">You define Pydantic models to specify the structure of the data expected.</p><div class="code-block" data-lang="python">
+from pydantic import BaseModel
+
+class Item(BaseModel):
+    name: str
+    price: float
+
+@app.post('/items/')
+def create_item(item: Item):
+    return {'name': item.name, 'price': item.price}
+</div><p id="-h4wgal_31">FastAPI automatically validates the input data based on the <code class="code" id="-h4wgal_32">Item</code> model and generates an error response if the data is invalid.</p></section><section class="chapter"><h2 id="asynchronous-support-with-fastapi" data-toc="asynchronous-support-with-fastapi">Asynchronous support with FastAPI</h2><p id="-h4wgal_33">FastAPI supports asynchronous programming using <code class="code" id="-h4wgal_36">async</code> and <code class="code" id="-h4wgal_37">await</code>.</p><p id="-h4wgal_34">This allows you to handle non-blocking I/O operations efficiently, such as database queries, file handling, or HTTP requests.</p><div class="code-block" data-lang="python">
+@app.get('/async-items/')
+async def get_items():
+    await asyncio.sleep(1)  # Simulate async task
+    return {'items': ['item1', 'item2']}
+</div></section><section class="chapter"><h2 id="fastapi-authentication-mechanisms" data-toc="fastapi-authentication-mechanisms">FastAPI authentication mechanisms</h2><p id="-h4wgal_38">FastAPI offers authentication mechanisms with OAuth2 and JWT for securing the API.</p><p id="-h4wgal_39">These can be easily integrated with FastAPI's built-in tools.</p><p id="-h4wgal_40">Example:</p><div class="code-block" data-lang="python">
+from fastapi import Depends, HTTPException
+from fastapi.security import OAuth2PasswordBearer
+import jwt
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
+
+def verify_token(token: str = Depends(oauth2_scheme)):
+    try:
+        payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        return payload
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail='Token expired')
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail='Invalid token')
+
+@app.get('/protected/')
+def protected_route(token: str = Depends(verify_token)):
+    return {'message': 'You are authorized', 'token_data': token}
+</div></section><section class="chapter"><h2 id="generating-openapi-documentation" data-toc="generating-openapi-documentation">Generating OpenAPI Documentation</h2><p id="-h4wgal_42">FastAPI automatically generates OpenAPI documentation based on the Python code, providing an interactive UI where users can explore and test the API.</p><p id="-h4wgal_43">To access the documentation, start the app and visit <code class="code" id="-h4wgal_47">/docs</code> or <code class="code" id="-h4wgal_48">/redoc</code> for alternative documentation formats:</p><div class="code-block" data-lang="bash">
+uvicorn app:app --reload
+</div><p id="-h4wgal_45">Go to <a href="http://127.0.0.1:8000/docs" id="-h4wgal_49" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/docs</a> for the interactive Swagger UI or <a href="http://127.0.0.1:8000/redoc" id="-h4wgal_50" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/redoc</a> for ReDoc documentation.</p><p id="-h4wgal_46">You can also export the OpenAPI spec from FastAPI by visiting <a href="http://127.0.0.1:8000/openapi.json" id="-h4wgal_51" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/openapi.json</a>.</p></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="flask.html" class="navigation-links__prev">Flask</a><a href="celery.html" class="navigation-links__next">Celery</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

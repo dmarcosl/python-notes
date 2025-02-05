@@ -86,10 +86,12 @@ Some common operations:
 
 ```python
 person = {'name': 'Daniel', 'age': 24}
-person['name']      # Access value by key
-person['age'] = 26  # Update value
-del person['name']  # Delete a key-value pair
-person.keys()       # Get all keys
-person.values()     # Get all values
-person.items()      # Get all pairs of keys values
+person['name']              # Access value by key
+person.get('name')          # Access value by key safely
+person.get('name', 'None')  # Access value by key safely, default if missing
+person['age'] = 26          # Update value
+del person['name']          # Delete a key-value pair
+person.keys()               # Get all keys
+person.values()             # Get all values
+person.items()              # Get all pairs of keys values
 ```

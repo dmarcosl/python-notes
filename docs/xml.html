@@ -1,0 +1,63 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T18:52:45.269982"><title>XML | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"reading-xml-files","level":0,"title":"Reading XML Files","anchor":"#reading-xml-files"},{"id":"writing-xml-files","level":0,"title":"Writing XML Files","anchor":"#writing-xml-files"},{"id":"editing-xml","level":0,"title":"Editing XML","anchor":"#editing-xml"},{"id":"mapping-xml-to-classes","level":0,"title":"Mapping XML to Classes","anchor":"#mapping-xml-to-classes"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="XML | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/xml.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="XML | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/xml.html#webpage",
+    "url": "writerside-documentation/xml.html",
+    "name": "XML | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="XML" data-main-title="XML" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced-Python-Module-Usage.md|Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="XML" id="XML.md">XML</h1><section class="chapter"><h2 id="reading-xml-files" data-toc="reading-xml-files">Reading XML Files</h2><p id="c1qtii_7">The <code class="code" id="c1qtii_16">xml.etree.ElementTree</code> module a built-in library for parsing, creating, and modifying XML data.</p><p id="c1qtii_8">It represents XML as a tree structure where each element is a node.</p><p id="c1qtii_9">To parse XML data use <code class="code" id="c1qtii_17">.parse()</code>, then use <code class="code" id="c1qtii_18">.find()</code> or <code class="code" id="c1qtii_19">.findall()</code> to access its elements.</p><p id="c1qtii_10">Base XML:</p><div class="code-block" data-lang="markup">
+&lt;items&gt;
+    &lt;city id=&quot;1&quot;&gt;
+        &lt;name&gt;Madrid&lt;/name&gt;
+    &lt;/city&gt;
+    &lt;city id=&quot;2&quot;&gt;
+        &lt;name&gt;Tokyo&lt;/name&gt;
+    &lt;/city&gt;
+&lt;/items&gt;
+</div><p id="c1qtii_12">Example of read:</p><div class="code-block" data-lang="python">
+import xml.etree.ElementTree as ET
+
+tree = ET.parse('data.xml')
+root = tree.getroot()
+
+for item in root.findall('city'):
+    print(item.get('id'), item.find('name').text)
+</div><p id="c1qtii_14">Output:</p><div class="code-block" data-lang="none">
+1 Madrid
+2 Tokyo
+</div></section><section class="chapter"><h2 id="writing-xml-files" data-toc="writing-xml-files">Writing XML Files</h2><p id="c1qtii_20">You can create and save an XML document using <code class="code" id="c1qtii_23">Element</code>, <code class="code" id="c1qtii_24">SubElement</code>, and <code class="code" id="c1qtii_25">ElementTree.write()</code>.</p><p id="c1qtii_21">Example:</p><div class="code-block" data-lang="python">
+root = ET.Element('items')
+item = ET.SubElement(root, 'city', id='1')
+ET.SubElement(item, 'name').text = 'Madrid'
+
+tree = ET.ElementTree(root)
+tree.write('output.xml')
+</div></section><section class="chapter"><h2 id="editing-xml" data-toc="editing-xml">Editing XML</h2><p id="c1qtii_26">Modify XML content by updating element values and saving changes.</p><div class="code-block" data-lang="python">
+for item in root.findall('city'):
+    item.find('name').text = 'New City'
+
+tree.write('updated.xml')
+</div></section><section class="chapter"><h2 id="mapping-xml-to-classes" data-toc="mapping-xml-to-classes">Mapping XML to Classes</h2><p id="c1qtii_28">You can map XML data to Python objects using a simple class-based approach.</p><p id="c1qtii_29">Example:</p><div class="code-block" data-lang="python">
+class Item:
+    def __init__(self, item_element):
+        self.id = item_element.get('id')
+        self.name = item_element.find('name').text
+
+tree = ET.parse('data.xml')
+root = tree.getroot()
+items = [Item(item) for item in root.findall('city')]
+
+for item in items:
+    print(item.id, item.name)
+</div><p id="c1qtii_31">Output:</p><div class="code-block" data-lang="none">
+1 Madrid
+2 Tokyo
+</div></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="json.html" class="navigation-links__prev">JSON</a><a href="regular-expressions.html" class="navigation-links__next">Regular Expressions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

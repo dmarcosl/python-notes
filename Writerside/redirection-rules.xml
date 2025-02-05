@@ -10,4 +10,12 @@
         <description>Created after removal of "Advanced Python Module Usage" from Python Notes</description>
         <accepts>Advanced-Python-Module-Usage.html</accepts>
     </rule>
+    <rule id="357b9462">
+        <description>Created after removal of "CML" from Python Notes</description>
+        <accepts>CML.html</accepts>
+    </rule>
+    <rule id="30552f58">
+        <description>Created after removal of "Firebase" from Python Notes</description>
+        <accepts>Firebase.html</accepts>
+    </rule>
 </rules>
