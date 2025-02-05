@@ -1,0 +1,59 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-05T02:32:52.643248"><title>Collections | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"list","level":0,"title":"List","anchor":"#list"},{"id":"tuple","level":0,"title":"Tuple","anchor":"#tuple"},{"id":"set","level":0,"title":"Set","anchor":"#set"},{"id":"dictionary","level":0,"title":"Dictionary","anchor":"#dictionary"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Collections | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/collections.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Collections | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/collections.html#webpage",
+    "url": "writerside-documentation/collections.html",
+    "name": "Collections | Python Notes",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Python Notes Help"
+}</script><!-- End Schema.org --></head><body data-id="Collections" data-main-title="Collections" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python-Language-Basics.md|Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Collections" id="Collections.md">Collections</h1><section class="chapter"><h2 id="list" data-toc="list">List</h2><p id="-8wzymw_7">Lists can be created using <code class="code" id="-8wzymw_11">list()</code> or <code class="code" id="-8wzymw_12">[]</code>.</p><div class="code-block" data-lang="python">
+cities = list('Madrid', 'Tokyo')
+cities = ['Madrid', 'Tokyo']
+</div><p id="-8wzymw_9">Some common operations:</p><div class="code-block" data-lang="python">
+numbers = [1, 2, 3]
+numbers[0]          # Access by index
+numbers.append(4)   # Add an element
+numbers.remove(2)   # Remove an element
+numbers.sort()      # Sort the list
+numbers.reverse()   # Reverse the list
+numbers[1:3]        # Slice the list
+</div></section><section class="chapter"><h2 id="tuple" data-toc="tuple">Tuple</h2><p id="-8wzymw_13">Tuples can be created using <code class="code" id="-8wzymw_17">tuple()</code>, <code class="code" id="-8wzymw_18">()</code> or several values separated by comma.</p><div class="code-block" data-lang="python">
+numbers = tuple([1, 2, 3])
+numbers = (1, 2, 3)
+numbers = 1, 2, 3
+</div><p id="-8wzymw_15">You can access elements by index or slice them, but tuples are immutable, so their values can't be changed.</p><div class="code-block" data-lang="python">
+coordinates = (10, 20)
+coordinates[0]         # Access by index
+coordinates[1:]        # Slice the tuple
+</div></section><section class="chapter"><h2 id="set" data-toc="set">Set</h2><p id="-8wzymw_19">Sets can be created with <code class="code" id="-8wzymw_24">set()</code> or <code class="code" id="-8wzymw_25">{}</code>.</p><div class="code-block" data-lang="python">
+fruit = set(['apple', 'banana', 'pineapple'])
+fruit = {'apple', 'banana', 'pineapple'}
+</div><p id="-8wzymw_21">Some common operations:</p><div class="code-block" data-lang="python">
+unique_numbers = {1, 2, 3}
+unique_numbers.add(4)      # Add an element
+unique_numbers.remove(1)   # Remove an element
+
+set1 = {1, 2}
+set2 = {2, 3}
+set1 | set2                # Union
+set1 &amp; set2                # Intersection
+set1 - set2                # Difference
+</div><div class="table-wrapper"><table class="wide" id="-8wzymw_23"><thead><tr class="ijRowHead" id="-8wzymw_26"><th id="-8wzymw_33"><p>Operation</p></th><th id="-8wzymw_34"><p>Equivalent</p></th><th id="-8wzymw_35"><p>Result</p></th></tr></thead><tbody><tr id="-8wzymw_27"><td id="-8wzymw_36"><p><code class="code" id="-8wzymw_39">a.issubset(b)</code></p></td><td id="-8wzymw_37"><p><code class="code" id="-8wzymw_40">a &lt;= b</code></p></td><td id="-8wzymw_38"><p>Checks if <code class="code" id="-8wzymw_41">a</code> is inside <code class="code" id="-8wzymw_42">b</code></p></td></tr><tr id="-8wzymw_28"><td id="-8wzymw_43"><p><code class="code" id="-8wzymw_46">a.issuperset(b)</code></p></td><td id="-8wzymw_44"><p><code class="code" id="-8wzymw_47">a &gt;= b</code></p></td><td id="-8wzymw_45"><p>Checks if <code class="code" id="-8wzymw_48">b</code> is inside <code class="code" id="-8wzymw_49">a</code></p></td></tr><tr id="-8wzymw_29"><td id="-8wzymw_50"><p><code class="code" id="-8wzymw_53">a.union(b)</code></p></td><td id="-8wzymw_51"><p><code class="code" id="-8wzymw_54">a \| b</code></p></td><td id="-8wzymw_52"><p>New set with the elements of both</p></td></tr><tr id="-8wzymw_30"><td id="-8wzymw_55"><p><code class="code" id="-8wzymw_58">a.intersection(b)</code></p></td><td id="-8wzymw_56"><p><code class="code" id="-8wzymw_59">a &amp; b</code></p></td><td id="-8wzymw_57"><p>New set with the elements common to both</p></td></tr><tr id="-8wzymw_31"><td id="-8wzymw_60"><p><code class="code" id="-8wzymw_63">a.difference(b)</code></p></td><td id="-8wzymw_61"><p><code class="code" id="-8wzymw_64">a - b</code></p></td><td id="-8wzymw_62"><p>New set with elements in <code class="code" id="-8wzymw_65">a</code> but not in <code class="code" id="-8wzymw_66">b</code></p></td></tr><tr id="-8wzymw_32"><td id="-8wzymw_67"><p><code class="code" id="-8wzymw_70">a.symmetric_difference(b)</code></p></td><td id="-8wzymw_68"><p><code class="code" id="-8wzymw_71">a ^ b</code></p></td><td id="-8wzymw_69"><p>New set with elements in either <code class="code" id="-8wzymw_72">a</code> or <code class="code" id="-8wzymw_73">b</code> but not both</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="dictionary" data-toc="dictionary">Dictionary</h2><p id="-8wzymw_74">Dictionaries are created with <code class="code" id="-8wzymw_79">dict()</code> or <code class="code" id="-8wzymw_80">{key: value}</code>.</p><div class="code-block" data-lang="python">
+score = dict('dani' : 6, 'fanta' : 5)
+score = {'dani' : 6, 'fanta' : 5}
+</div><p id="-8wzymw_76">Dictionaries are the same as a JSON in JS or a Map in Java.</p><p id="-8wzymw_77">Some common operations:</p><div class="code-block" data-lang="python">
+person = {'name': 'Daniel', 'age': 24}
+person['name']      # Access value by key
+person['age'] = 26  # Update value
+del person['name']  # Delete a key-value pair
+person.keys()       # Get all keys
+person.values()     # Get all values
+person.items()      # Get all pairs of keys values
+</div></section><div class="last-modified">Last modified: 05 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="data-types.html" class="navigation-links__prev">Data Types</a><a href="operators.html" class="navigation-links__next">Operators</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

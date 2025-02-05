@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildprofiles SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-profiles.dtd">
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <variables>
+        <primary-color>#A08C1F</primary-color>
+        <color-preset>contrast</color-preset>
+        <resizable-sidebar>false</resizable-sidebar>
+        <header-logo>https://resources.jetbrains.com/help/img/writerside/writerside.svg</header-logo>
+        <product-web-url>https://github.com/dmarcosl</product-web-url>
+    </variables>
+    <build-profile instance="in">
+        <variables>
+            <noindex-content>false</noindex-content>
+        </variables>
+    </build-profile>
+
+</buildprofiles>

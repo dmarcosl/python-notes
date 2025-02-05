@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Python Notes"
+                 start-page="starter.md">
+
+    <toc-element topic="starter.md">
+        <toc-element topic="Installation.md"/>
+        <toc-element topic="Virtual-Environment.md"/>
+        <toc-element topic="PIP.md"/>
+    </toc-element>
+    <toc-element topic="Python-Language-Basics.md">
+        <toc-element topic="Data-Types.md"/>
+        <toc-element topic="Collections.md"/>
+        <toc-element topic="Operators.md"/>
+        <toc-element topic="Iteration.md"/>
+        <toc-element topic="Conditionals.md"/>
+        <toc-element topic="Functions.md"/>
+        <toc-element topic="Classes-and-Objects.md"/>
+        <toc-element topic="Importing-Modules.md"/>
+    </toc-element>
+</instance-profile>
