@@ -10,6 +10,7 @@
         <toc-element topic="Installation.md"/>
         <toc-element topic="Virtual-Environment.md"/>
         <toc-element topic="PIP.md"/>
+        <toc-element topic="Execution-and-Interaction.md"/>
     </toc-element>
     <toc-element toc-title="Python Language Basics">
         <toc-element topic="Data-Types.md"/>
