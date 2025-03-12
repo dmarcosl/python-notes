@@ -1,5 +1,13 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-02-18T20:19:30.114486"><title>Functions | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"defining-functions","level":0,"title":"Defining Functions","anchor":"#defining-functions"},{"id":"return-statement","level":0,"title":"Return Statement","anchor":"#return-statement"},{"id":"lambda-functions","level":0,"title":"Lambda Functions","anchor":"#lambda-functions"},{"id":"default-arguments","level":0,"title":"Default Arguments","anchor":"#default-arguments"},{"id":"keyword-arguments","level":0,"title":"Keyword Arguments","anchor":"#keyword-arguments"},{"id":"arbitrary-arguments","level":0,"title":"Arbitrary Arguments","anchor":"#arbitrary-arguments"},{"id":"docstrings","level":0,"title":"Docstrings","anchor":"#docstrings"},{"id":"returning-multiple-values","level":0,"title":"Returning Multiple Values","anchor":"#returning-multiple-values"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Functions | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/functions.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Functions | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.34502"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8YKCVR45PQ');
+</script><title>Functions | Python Notes</title><script type="application/json" id="virtual-toc-data">[{"id":"defining-functions","level":0,"title":"Defining Functions","anchor":"#defining-functions"},{"id":"return-statement","level":0,"title":"Return Statement","anchor":"#return-statement"},{"id":"lambda-functions","level":0,"title":"Lambda Functions","anchor":"#lambda-functions"},{"id":"default-arguments","level":0,"title":"Default Arguments","anchor":"#default-arguments"},{"id":"keyword-arguments","level":0,"title":"Keyword Arguments","anchor":"#keyword-arguments"},{"id":"arbitrary-arguments","level":0,"title":"Arbitrary Arguments","anchor":"#arbitrary-arguments"},{"id":"docstrings","level":0,"title":"Docstrings","anchor":"#docstrings"},{"id":"returning-multiple-values","level":0,"title":"Returning Multiple Values","anchor":"#returning-multiple-values"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Functions | Python Notes"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Python Notes Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/functions.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Functions | Python Notes"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": "WebPage",
     "@id": "writerside-documentation/functions.html#webpage",
@@ -13,73 +21,73 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Functions" data-main-title="Functions" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Functions" id="Functions.md">Functions</h1><section class="chapter"><h2 id="defining-functions" data-toc="defining-functions">Defining Functions</h2><p id="-8ufr4z_11">A function is a block of reusable code that performs a specific task.</p><p id="-8ufr4z_12">In Python, you define a function using the <code class="code" id="-8ufr4z_20">def</code> keyword, followed by the function name and parentheses enclosing any parameters.</p><p id="-8ufr4z_13">The function body is indented.</p><p id="-8ufr4z_14">Syntax:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Functions" data-main-title="Functions" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Functions" id="Functions.md">Functions</h1><section class="chapter"><h2 id="defining-functions" data-toc="defining-functions">Defining Functions</h2><p id="qrcado_11">A function is a block of reusable code that performs a specific task.</p><p id="qrcado_12">In Python, you define a function using the <code class="code" id="qrcado_20">def</code> keyword, followed by the function name and parentheses enclosing any parameters.</p><p id="qrcado_13">The function body is indented.</p><p id="qrcado_14">Syntax:</p><div class="code-block" data-lang="python">
 def function_name(parameters):
     # Block of code
-</div><p id="-8ufr4z_16">Example:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_16">Example:</p><div class="code-block" data-lang="python">
 def greet(name):
     print('Hello, ' + name + '!')
-</div><p id="-8ufr4z_18">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_18">Calling the Function:</p><div class="code-block" data-lang="python">
 greet('Alice')  # Output: Hello, Alice!
 greet('Bob')    # Output: Hello, Bob!
-</div></section><section class="chapter"><h2 id="return-statement" data-toc="return-statement">Return Statement</h2><p id="-8ufr4z_21">The <code class="code" id="-8ufr4z_29">return</code> statement is used to send a result back from the function to the caller.</p><p id="-8ufr4z_22">After the <code class="code" id="-8ufr4z_30">return</code> statement is executed, the function exits and the control is returned to the place where the function was called.</p><p id="-8ufr4z_23">Syntax:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="return-statement" data-toc="return-statement">Return Statement</h2><p id="qrcado_21">The <code class="code" id="qrcado_29">return</code> statement is used to send a result back from the function to the caller.</p><p id="qrcado_22">After the <code class="code" id="qrcado_30">return</code> statement is executed, the function exits and the control is returned to the place where the function was called.</p><p id="qrcado_23">Syntax:</p><div class="code-block" data-lang="python">
 def function_name(parameters):
     # Block of code
     return value
-</div><p id="-8ufr4z_25">Example:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_25">Example:</p><div class="code-block" data-lang="python">
 def add(a, b):
     result = a + b
     return result
-</div><p id="-8ufr4z_27">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_27">Calling the Function:</p><div class="code-block" data-lang="python">
 sum = add(3, 4)
 print(sum)  # Output: 7
-</div></section><section class="chapter"><h2 id="lambda-functions" data-toc="lambda-functions">Lambda Functions</h2><p id="-8ufr4z_31">A <code class="code" id="-8ufr4z_40">lambda</code> function is a small, anonymous function defined using the <code class="code" id="-8ufr4z_41">lambda</code> keyword.</p><p id="-8ufr4z_32">It can take any number of arguments but can only have one expression.</p><p id="-8ufr4z_33">The expression is evaluated and returned when the <code class="code" id="-8ufr4z_42">lambda</code> function is called.</p><p id="-8ufr4z_34">Syntax:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="lambda-functions" data-toc="lambda-functions">Lambda Functions</h2><p id="qrcado_31">A <code class="code" id="qrcado_40">lambda</code> function is a small, anonymous function defined using the <code class="code" id="qrcado_41">lambda</code> keyword.</p><p id="qrcado_32">It can take any number of arguments but can only have one expression.</p><p id="qrcado_33">The expression is evaluated and returned when the <code class="code" id="qrcado_42">lambda</code> function is called.</p><p id="qrcado_34">Syntax:</p><div class="code-block" data-lang="python">
 lambda parameters: expression
-</div><p id="-8ufr4z_36">Example:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_36">Example:</p><div class="code-block" data-lang="python">
 multiply = lambda x, y: x * y
-</div><p id="-8ufr4z_38">Calling the <code class="code" id="-8ufr4z_43">lambda</code>:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_38">Calling the <code class="code" id="qrcado_43">lambda</code>:</p><div class="code-block" data-lang="python">
 result = multiply(3, 4)
 print(result)  # Output: 12
-</div></section><section class="chapter"><h2 id="default-arguments" data-toc="default-arguments">Default Arguments</h2><p id="-8ufr4z_44">You can assign default values to parameters when defining a function.</p><p id="-8ufr4z_45">These default values will be used if no argument is passed for those parameters when the function is called.</p><p id="-8ufr4z_46">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="default-arguments" data-toc="default-arguments">Default Arguments</h2><p id="qrcado_44">You can assign default values to parameters when defining a function.</p><p id="qrcado_45">These default values will be used if no argument is passed for those parameters when the function is called.</p><p id="qrcado_46">Example:</p><div class="code-block" data-lang="python">
 def greet(name='Guest'):
     print('Hello, ' + name + '!')
-</div><p id="-8ufr4z_48">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_48">Calling the Function:</p><div class="code-block" data-lang="python">
 greet()         # Output: Hello, Guest!
 greet('Alice')  # Output: Hello, Alice!
-</div></section><section class="chapter"><h2 id="keyword-arguments" data-toc="keyword-arguments">Keyword Arguments</h2><p id="-8ufr4z_50">You can also specify the values of arguments by their parameter names when calling a function.</p><p id="-8ufr4z_51">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="keyword-arguments" data-toc="keyword-arguments">Keyword Arguments</h2><p id="qrcado_50">You can also specify the values of arguments by their parameter names when calling a function.</p><p id="qrcado_51">Example:</p><div class="code-block" data-lang="python">
 def introduce(name, age):
     print('My name is ' + name + ' and I am ' + str(age) + '.')
-</div><p id="-8ufr4z_53">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_53">Calling the Function:</p><div class="code-block" data-lang="python">
 introduce(age=24, name='Daniel')
-</div><p id="-8ufr4z_55">Output:</p><div class="code-block" data-lang="none">
+</div><p id="qrcado_55">Output:</p><div class="code-block" data-lang="none">
 My name is Daniel and I am 24.
-</div></section><section class="chapter"><h2 id="arbitrary-arguments" data-toc="arbitrary-arguments">Arbitrary Arguments</h2><p id="-8ufr4z_57"><code class="code" id="-8ufr4z_65">*args</code> allows you to pass a variable number of non-keyword arguments (positional arguments) to a function.</p><p id="-8ufr4z_58"><code class="code" id="-8ufr4z_66">**kwargs</code> allows you to pass a variable number of keyword arguments to a function.</p><p id="-8ufr4z_59">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="arbitrary-arguments" data-toc="arbitrary-arguments">Arbitrary Arguments</h2><p id="qrcado_57"><code class="code" id="qrcado_65">*args</code> allows you to pass a variable number of non-keyword arguments (positional arguments) to a function.</p><p id="qrcado_58"><code class="code" id="qrcado_66">**kwargs</code> allows you to pass a variable number of keyword arguments to a function.</p><p id="qrcado_59">Example:</p><div class="code-block" data-lang="python">
 def my_function(name, *args, age=None, **kwargs):
     print(name)
     print(args)
     print(age)
     print(kwargs)
-</div><p id="-8ufr4z_61">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_61">Calling the Function:</p><div class="code-block" data-lang="python">
 my_function('Daniel', 1, 2, 3, 4, height=182)
-</div><p id="-8ufr4z_63">Output:</p><div class="code-block" data-lang="none">
+</div><p id="qrcado_63">Output:</p><div class="code-block" data-lang="none">
 Daniel
 (1, 2, 3, 4)
 None
 {'height': 182}
-</div></section><section class="chapter"><h2 id="docstrings" data-toc="docstrings">Docstrings</h2><p id="-8ufr4z_67">A docstring is a special type of string that is used to document a function.</p><p id="-8ufr4z_68">It is placed immediately after the function definition and can be accessed using the <code class="code" id="-8ufr4z_75">help()</code> function or <code class="code" id="-8ufr4z_76">.__doc__.</code></p><p id="-8ufr4z_69">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="docstrings" data-toc="docstrings">Docstrings</h2><p id="qrcado_67">A docstring is a special type of string that is used to document a function.</p><p id="qrcado_68">It is placed immediately after the function definition and can be accessed using the <code class="code" id="qrcado_75">help()</code> function or <code class="code" id="qrcado_76">.__doc__.</code></p><p id="qrcado_69">Example:</p><div class="code-block" data-lang="python">
 def greet(name):
     &quot;&quot;&quot;This function greets the person passed in as a parameter.&quot;&quot;&quot;
     print('Hello, ' + name + '!')
-</div><p id="-8ufr4z_71">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_71">Calling the Function:</p><div class="code-block" data-lang="python">
 print(greet.__doc__)
-</div><p id="-8ufr4z_73">Output:</p><div class="code-block" data-lang="none">
+</div><p id="qrcado_73">Output:</p><div class="code-block" data-lang="none">
 This function greets the person passed in as a parameter.
-</div></section><section class="chapter"><h2 id="returning-multiple-values" data-toc="returning-multiple-values">Returning Multiple Values</h2><p id="-8ufr4z_77">A function in Python can return multiple values.</p><p id="-8ufr4z_78">These values are returned as a <code class="code" id="-8ufr4z_85">tuple</code>, which is implicitly created when multiple values are returned. You can then unpack these values into separate variables when calling the function.</p><p id="-8ufr4z_79">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="returning-multiple-values" data-toc="returning-multiple-values">Returning Multiple Values</h2><p id="qrcado_77">A function in Python can return multiple values.</p><p id="qrcado_78">These values are returned as a <code class="code" id="qrcado_85">tuple</code>, which is implicitly created when multiple values are returned. You can then unpack these values into separate variables when calling the function.</p><p id="qrcado_79">Example:</p><div class="code-block" data-lang="python">
 def get_coordinates():
     return 4, 5, 'Madrid'
-</div><p id="-8ufr4z_81">Calling the Function:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_81">Calling the Function:</p><div class="code-block" data-lang="python">
 x, y, city = get_coordinates()
 print(x, y, city)
-</div><p id="-8ufr4z_83">Output:</p><div class="code-block" data-lang="python">
+</div><p id="qrcado_83">Output:</p><div class="code-block" data-lang="python">
 4 5 Madrid
-</div></section><div class="last-modified">Last modified: 18 February 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="conditionals.html" class="navigation-links__prev">Conditionals</a><a href="classes-and-objects.html" class="navigation-links__next">Classes and Objects</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="conditionals.html" class="navigation-links__prev">Conditionals</a><a href="classes-and-objects.html" class="navigation-links__next">Classes and Objects</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

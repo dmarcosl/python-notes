@@ -9,6 +9,7 @@
         <resizable-sidebar>false</resizable-sidebar>
         <header-logo>https://resources.jetbrains.com/help/img/writerside/writerside.svg</header-logo>
         <product-web-url>https://github.com/dmarcosl</product-web-url>
+	<analytics-head-script-file>analytics.js</analytics-head-script-file>
     </variables>
     <build-profile instance="in">
         <variables>
