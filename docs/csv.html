@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.373866"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.531885"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,24 +21,24 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="CSV" data-main-title="CSV" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="CSV" id="CSV.md">CSV</h1><section class="chapter"><h2 id="reading-csv-files" data-toc="reading-csv-files">Reading CSV files</h2><p id="-nux5xb_6">The <code class="code" id="-nux5xb_16">csv</code> module allows for reading CSV files in a simple and efficient manner.</p><p id="-nux5xb_7">You can read each row as a <code class="code" id="-nux5xb_17">list</code> or as a <code class="code" id="-nux5xb_18">dictionary</code>, depending on your needs.</p><p id="-nux5xb_8">Example of reading as <code class="code" id="-nux5xb_19">list</code>:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="CSV" data-main-title="CSV" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="CSV" id="CSV.md">CSV</h1><section class="chapter"><h2 id="reading-csv-files" data-toc="reading-csv-files">Reading CSV files</h2><p id="-63b25z_6">The <code class="code" id="-63b25z_16">csv</code> module allows for reading CSV files in a simple and efficient manner.</p><p id="-63b25z_7">You can read each row as a <code class="code" id="-63b25z_17">list</code> or as a <code class="code" id="-63b25z_18">dictionary</code>, depending on your needs.</p><p id="-63b25z_8">Example of reading as <code class="code" id="-63b25z_19">list</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 with open('example.csv', 'r') as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
         print(row)
-</div><p id="-nux5xb_10">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-63b25z_10">Output:</p><div class="code-block" data-lang="none">
 ['name', 'age', 'city']
 ['Daniel', '24', 'Madrid']
-</div><p id="-nux5xb_12">Example of reading as <code class="code" id="-nux5xb_20">dict</code>:</p><div class="code-block" data-lang="python">
+</div><p id="-63b25z_12">Example of reading as <code class="code" id="-63b25z_20">dict</code>:</p><div class="code-block" data-lang="python">
 with open('example.csv', 'r') as file:
     csv_dict_reader = csv.DictReader(file)
     for row in csv_dict_reader:
         print(row)
-</div><p id="-nux5xb_14">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-63b25z_14">Output:</p><div class="code-block" data-lang="none">
 {'name': 'Daniel', 'age': '24', 'city': 'Madrid'}
-</div></section><section class="chapter"><h2 id="writing-to-csv-files" data-toc="writing-to-csv-files">Writing to CSV files</h2><p id="-nux5xb_21">You can write data to CSV files by using <code class="code" id="-nux5xb_26">.writer()</code> for a list or <code class="code" id="-nux5xb_27">.DictWriter()</code> for dictionaries.</p><p id="-nux5xb_22">Example of writing as <code class="code" id="-nux5xb_28">list</code>:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="writing-to-csv-files" data-toc="writing-to-csv-files">Writing to CSV files</h2><p id="-63b25z_21">You can write data to CSV files by using <code class="code" id="-63b25z_26">.writer()</code> for a list or <code class="code" id="-63b25z_27">.DictWriter()</code> for dictionaries.</p><p id="-63b25z_22">Example of writing as <code class="code" id="-63b25z_28">list</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 data = [['Name', 'Age', 'City'], ['Daniel', 24, 'Madrid'], ['Álex', 23, 'Gijón']]
@@ -46,7 +46,7 @@ data = [['Name', 'Age', 'City'], ['Daniel', 24, 'Madrid'], ['Álex', 23, 'Gijón
 with open('output.csv', 'w', newline='') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerows(data)
-</div><p id="-nux5xb_24">Example of writing as <code class="code" id="-nux5xb_29">dict</code>:</p><div class="code-block" data-lang="python">
+</div><p id="-63b25z_24">Example of writing as <code class="code" id="-63b25z_29">dict</code>:</p><div class="code-block" data-lang="python">
 import csv
 
 data = [{'Name': 'Daniel', 'Age': 24, 'City': 'Madrid'},
@@ -57,20 +57,20 @@ with open('output.csv', 'w', newline='') as file:
     csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
     csv_writer.writeheader()
     csv_writer.writerows(data)
-</div></section><section class="chapter"><h2 id="using-pandas-for-csv" data-toc="using-pandas-for-csv">Using pandas for CSV</h2><p id="-nux5xb_30"><code class="code" id="-nux5xb_39">pandas</code> provides powerful functionality for reading, writing, and manipulating CSV data.</p><p id="-nux5xb_31">It is highly recommended for handling large datasets efficiently.</p><p id="-nux5xb_32">Must be installed with <code class="code" id="-nux5xb_40">pip</code>.</p><p id="-nux5xb_33">Example of writing with <code class="code" id="-nux5xb_41">pandas</code>:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="using-pandas-for-csv" data-toc="using-pandas-for-csv">Using pandas for CSV</h2><p id="-63b25z_30"><code class="code" id="-63b25z_39">pandas</code> provides powerful functionality for reading, writing, and manipulating CSV data.</p><p id="-63b25z_31">It is highly recommended for handling large datasets efficiently.</p><p id="-63b25z_32">Must be installed with <code class="code" id="-63b25z_40">pip</code>.</p><p id="-63b25z_33">Example of writing with <code class="code" id="-63b25z_41">pandas</code>:</p><div class="code-block" data-lang="python">
 import pandas as pd
 
 data = {'Name': ['Daniel', 'Álex'], 'Age': [24, 23], 'City': ['Madrid', 'Gijón']}
 df = pd.DataFrame(data)
 
 df.to_csv('example.csv', index=False)
-</div><p id="-nux5xb_35">Example of reading with <code class="code" id="-nux5xb_42">pandas</code>:</p><div class="code-block" data-lang="python">
+</div><p id="-63b25z_35">Example of reading with <code class="code" id="-63b25z_42">pandas</code>:</p><div class="code-block" data-lang="python">
 import pandas as pd
 
 df = pd.read_csv('example.csv')
 print(df)
-</div><p id="-nux5xb_37">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-63b25z_37">Output:</p><div class="code-block" data-lang="none">
 #     Name  Age       City
 0   Daniel   24     Madrid
 1     Álex   23      Gijón
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="files.html" class="navigation-links__prev">Files</a><a href="sqlite3.html" class="navigation-links__next">SQLite3</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="files.html" class="navigation-links__prev">Files</a><a href="sqlite3.html" class="navigation-links__next">SQLite3</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

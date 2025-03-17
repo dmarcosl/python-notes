@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.346378"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.503997"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,16 +21,16 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Files" data-main-title="Files" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Files" id="Files.md">Files</h1><section class="chapter"><h2 id="opening-and-closing-files" data-toc="opening-and-closing-files">Opening and closing files</h2><p id="z90b228_13">Files can be opened using the <code class="code" id="z90b228_19">open()</code> function, which returns a file object.</p><p id="z90b228_14">It&rsquo;s important to close files after use to free system resources.</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Files" data-main-title="Files" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Files" id="Files.md">Files</h1><section class="chapter"><h2 id="opening-and-closing-files" data-toc="opening-and-closing-files">Opening and closing files</h2><p id="-zartc8_13">Files can be opened using the <code class="code" id="-zartc8_19">open()</code> function, which returns a file object.</p><p id="-zartc8_14">It&rsquo;s important to close files after use to free system resources.</p><div class="code-block" data-lang="python">
 file = open('example.txt', 'r')
 content = file.read()
 print(content)
 file.close()
-</div><p id="z90b228_16">We can open a file using the <code class="code" id="z90b228_20">with</code> statement, similar to working with objects.</p><p id="z90b228_17">This ensures that the file remains open only within the indented block, and it is automatically closed afterward.</p><div class="code-block" data-lang="python">
+</div><p id="-zartc8_16">We can open a file using the <code class="code" id="-zartc8_20">with</code> statement, similar to working with objects.</p><p id="-zartc8_17">This ensures that the file remains open only within the indented block, and it is automatically closed afterward.</p><div class="code-block" data-lang="python">
 with open('/home/user/example.txt', 'r') as content:
     for line in content:
         print(line)
-</div></section><section class="chapter"><h2 id="permissions" data-toc="permissions">Permissions</h2><div class="table-wrapper"><table class="wide" id="z90b228_21"><thead><tr class="ijRowHead" id="z90b228_22"><th id="z90b228_35"><p>Permission</p></th><th id="z90b228_36"><p>Usage</p></th></tr></thead><tbody><tr id="z90b228_23"><td id="z90b228_37"><p>r</p></td><td id="z90b228_38"><p>for read only, with the pointer at the beginning of the file. It's the default</p></td></tr><tr id="z90b228_24"><td id="z90b228_39"><p>r+</p></td><td id="z90b228_40"><p>for read and write, with the pointer at the beginning</p></td></tr><tr id="z90b228_25"><td id="z90b228_41"><p>w</p></td><td id="z90b228_42"><p>for write only, overwrites the file if it exists, else creates it</p></td></tr><tr id="z90b228_26"><td id="z90b228_43"><p>w+</p></td><td id="z90b228_44"><p>for write and read, overwrites the file if it exists, else creates it</p></td></tr><tr id="z90b228_27"><td id="z90b228_45"><p>a</p></td><td id="z90b228_46"><p>for append, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="z90b228_28"><td id="z90b228_47"><p>a+</p></td><td id="z90b228_48"><p>for append and read, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="z90b228_29"><td id="z90b228_49"><p>rb</p></td><td id="z90b228_50"><p>for read only in binary format, with the pointer at the beginning</p></td></tr><tr id="z90b228_30"><td id="z90b228_51"><p>rb+</p></td><td id="z90b228_52"><p>for read and write in binary format, with the pointer at the beginning</p></td></tr><tr id="z90b228_31"><td id="z90b228_53"><p>wb</p></td><td id="z90b228_54"><p>for write only in binary format, overwrites the file if it exists, else creates it</p></td></tr><tr id="z90b228_32"><td id="z90b228_55"><p>wb+</p></td><td id="z90b228_56"><p>for write and read in binary format, overwrites the file if it exists, else creates it</p></td></tr><tr id="z90b228_33"><td id="z90b228_57"><p>ab</p></td><td id="z90b228_58"><p>for append in binary format, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="z90b228_34"><td id="z90b228_59"><p>ab+</p></td><td id="z90b228_60"><p>for append and read in binary format, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="reading-from-and-writing-to-files" data-toc="reading-from-and-writing-to-files">Reading from and writing to files</h2><section class="chapter"><h3 id="reading-a-file" data-toc="reading-a-file">Reading a file</h3><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="permissions" data-toc="permissions">Permissions</h2><div class="table-wrapper"><table class="wide" id="-zartc8_21"><thead><tr class="ijRowHead" id="-zartc8_22"><th id="-zartc8_35"><p>Permission</p></th><th id="-zartc8_36"><p>Usage</p></th></tr></thead><tbody><tr id="-zartc8_23"><td id="-zartc8_37"><p>r</p></td><td id="-zartc8_38"><p>for read only, with the pointer at the beginning of the file. It's the default</p></td></tr><tr id="-zartc8_24"><td id="-zartc8_39"><p>r+</p></td><td id="-zartc8_40"><p>for read and write, with the pointer at the beginning</p></td></tr><tr id="-zartc8_25"><td id="-zartc8_41"><p>w</p></td><td id="-zartc8_42"><p>for write only, overwrites the file if it exists, else creates it</p></td></tr><tr id="-zartc8_26"><td id="-zartc8_43"><p>w+</p></td><td id="-zartc8_44"><p>for write and read, overwrites the file if it exists, else creates it</p></td></tr><tr id="-zartc8_27"><td id="-zartc8_45"><p>a</p></td><td id="-zartc8_46"><p>for append, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="-zartc8_28"><td id="-zartc8_47"><p>a+</p></td><td id="-zartc8_48"><p>for append and read, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="-zartc8_29"><td id="-zartc8_49"><p>rb</p></td><td id="-zartc8_50"><p>for read only in binary format, with the pointer at the beginning</p></td></tr><tr id="-zartc8_30"><td id="-zartc8_51"><p>rb+</p></td><td id="-zartc8_52"><p>for read and write in binary format, with the pointer at the beginning</p></td></tr><tr id="-zartc8_31"><td id="-zartc8_53"><p>wb</p></td><td id="-zartc8_54"><p>for write only in binary format, overwrites the file if it exists, else creates it</p></td></tr><tr id="-zartc8_32"><td id="-zartc8_55"><p>wb+</p></td><td id="-zartc8_56"><p>for write and read in binary format, overwrites the file if it exists, else creates it</p></td></tr><tr id="-zartc8_33"><td id="-zartc8_57"><p>ab</p></td><td id="-zartc8_58"><p>for append in binary format, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr><tr id="-zartc8_34"><td id="-zartc8_59"><p>ab+</p></td><td id="-zartc8_60"><p>for append and read in binary format, with the pointer at the end of the file. It creates a new file if it doesn't exist</p></td></tr></tbody></table></div></section><section class="chapter"><h2 id="reading-from-and-writing-to-files" data-toc="reading-from-and-writing-to-files">Reading from and writing to files</h2><section class="chapter"><h3 id="reading-a-file" data-toc="reading-a-file">Reading a file</h3><div class="code-block" data-lang="python">
 with open('example.txt', 'r') as file:
     content = file.read()  # Reads the entire file
     print(content)
@@ -40,30 +40,30 @@ with open('example.txt', 'w') as file:
 </div></section><section class="chapter"><h3 id="appending-to-a-file" data-toc="appending-to-a-file">Appending to a file</h3><div class="code-block" data-lang="python">
 with open('example.txt', 'a') as file:
     file.write('\nAppending new content')
-</div></section></section><section class="chapter"><h2 id="file-paths-and-directories" data-toc="file-paths-and-directories">File paths and directories</h2><p id="z90b228_67">Python&rsquo;s <code class="code" id="z90b228_72">os</code> and <code class="code" id="z90b228_73">pathlib</code> modules help in working with file paths and directories.</p><p id="z90b228_68">Using <code class="code" id="z90b228_74">os</code>:</p><div class="code-block" data-lang="python">
+</div></section></section><section class="chapter"><h2 id="file-paths-and-directories" data-toc="file-paths-and-directories">File paths and directories</h2><p id="-zartc8_67">Python&rsquo;s <code class="code" id="-zartc8_72">os</code> and <code class="code" id="-zartc8_73">pathlib</code> modules help in working with file paths and directories.</p><p id="-zartc8_68">Using <code class="code" id="-zartc8_74">os</code>:</p><div class="code-block" data-lang="python">
 import os
 
 print(os.getcwd())  # Get current working directory
 os.mkdir('new_directory')  # Create a new directory
-</div><p id="z90b228_70">Using <code class="code" id="z90b228_75">pathlib</code>:</p><div class="code-block" data-lang="python">
+</div><p id="-zartc8_70">Using <code class="code" id="-zartc8_75">pathlib</code>:</p><div class="code-block" data-lang="python">
 from pathlib import Path
 
 path = Path('example.txt')
 if path.exists():
     print('File exists!')
-</div></section><section class="chapter"><h2 id="file-object-methods-file-attributes" data-toc="file-object-methods-file-attributes">File Object Methods: File Attributes</h2><ul class="list _bullet" id="z90b228_76"><li class="list__item" id="z90b228_81"><p><code class="code" id="z90b228_84">.name</code>: Returns the name of the file.</p></li><li class="list__item" id="z90b228_82"><p><code class="code" id="z90b228_85">.mode</code>: Returns the mode in which the file was opened.</p></li><li class="list__item" id="z90b228_83"><p><code class="code" id="z90b228_86">.closed</code>: Returns True if the file is closed, otherwise False.</p></li></ul><p id="z90b228_77">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="file-object-methods-file-attributes" data-toc="file-object-methods-file-attributes">File Object Methods: File Attributes</h2><ul class="list _bullet" id="-zartc8_76"><li class="list__item" id="-zartc8_81"><p><code class="code" id="-zartc8_84">.name</code>: Returns the name of the file.</p></li><li class="list__item" id="-zartc8_82"><p><code class="code" id="-zartc8_85">.mode</code>: Returns the mode in which the file was opened.</p></li><li class="list__item" id="-zartc8_83"><p><code class="code" id="-zartc8_86">.closed</code>: Returns True if the file is closed, otherwise False.</p></li></ul><p id="-zartc8_77">Example:</p><div class="code-block" data-lang="python">
 with open('example.txt', 'r') as file:
     print(f'File Name: {file.name}')
     print(f'File Mode: {file.mode}')
     print(f'Is Closed? {file.closed}')
 
 print(f'Is Closed after block? {file.closed}')  # True
-</div><p id="z90b228_79">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-zartc8_79">Output:</p><div class="code-block" data-lang="none">
 File Name: example.txt
 File Mode: r
 Is Closed? False
 Is Closed after block? True
-</div></section><section class="chapter"><h2 id="file-object-methods-reading-methods" data-toc="file-object-methods-reading-methods">File Object Methods: Reading Methods</h2><ul class="list _bullet" id="z90b228_87"><li class="list__item" id="z90b228_92"><p><code class="code" id="z90b228_95">.read(size)</code>: Reads the entire file or a specified number of bytes.</p></li><li class="list__item" id="z90b228_93"><p><code class="code" id="z90b228_96">.readline()</code>: Reads a single line from the file.</p></li><li class="list__item" id="z90b228_94"><p><code class="code" id="z90b228_97">.readlines()</code>: Reads all lines and returns a list.</p></li></ul><p id="z90b228_88">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="file-object-methods-reading-methods" data-toc="file-object-methods-reading-methods">File Object Methods: Reading Methods</h2><ul class="list _bullet" id="-zartc8_87"><li class="list__item" id="-zartc8_92"><p><code class="code" id="-zartc8_95">.read(size)</code>: Reads the entire file or a specified number of bytes.</p></li><li class="list__item" id="-zartc8_93"><p><code class="code" id="-zartc8_96">.readline()</code>: Reads a single line from the file.</p></li><li class="list__item" id="-zartc8_94"><p><code class="code" id="-zartc8_97">.readlines()</code>: Reads all lines and returns a list.</p></li></ul><p id="-zartc8_88">Example:</p><div class="code-block" data-lang="python">
 with open('example.txt', 'r') as file:
     print(file.read())
     
@@ -75,7 +75,7 @@ with open('example.txt', 'r') as file:
     
 with open('example.txt', 'r') as file:
     print(file.readlines())
-</div><p id="z90b228_90">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-zartc8_90">Output:</p><div class="code-block" data-lang="none">
 Hello World, this is an example file.
 Second line.
 
@@ -84,11 +84,11 @@ Hello Worl
 Hello World, this is an example file.
 
 ['Hello World, this is an example file.\n', 'Second line.\n']
-</div></section><section class="chapter"><h2 id="file-object-methods-writing-methods" data-toc="file-object-methods-writing-methods">File Object Methods: Writing Methods</h2><ul class="list _bullet" id="z90b228_98"><li class="list__item" id="z90b228_101"><p><code class="code" id="z90b228_103">.write(string)</code>: Writes a string to the file.</p></li><li class="list__item" id="z90b228_102"><p><code class="code" id="z90b228_104">.writelines(iterable)</code>: Writes multiple lines from an iterable.</p></li></ul><p id="z90b228_99">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="file-object-methods-writing-methods" data-toc="file-object-methods-writing-methods">File Object Methods: Writing Methods</h2><ul class="list _bullet" id="-zartc8_98"><li class="list__item" id="-zartc8_101"><p><code class="code" id="-zartc8_103">.write(string)</code>: Writes a string to the file.</p></li><li class="list__item" id="-zartc8_102"><p><code class="code" id="-zartc8_104">.writelines(iterable)</code>: Writes multiple lines from an iterable.</p></li></ul><p id="-zartc8_99">Example:</p><div class="code-block" data-lang="python">
 with open('output.txt', 'w') as file:
     file.write('First line\n')
     file.writelines(['Second line\n', 'Third line\n'])
-</div></section><section class="chapter"><h2 id="error-handling" data-toc="error-handling">Error Handling</h2><p id="z90b228_105">Errors may occur when working with files, such as trying to read a non-existent file.</p><p id="z90b228_106">Using exception handling (try-except) prevents crashes.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="error-handling" data-toc="error-handling">Error Handling</h2><p id="-zartc8_105">Errors may occur when working with files, such as trying to read a non-existent file.</p><p id="-zartc8_106">Using exception handling (try-except) prevents crashes.</p><div class="code-block" data-lang="python">
 try:
     with open('non_existent_file.txt', 'r') as file:
         content = file.read()
@@ -96,31 +96,31 @@ except FileNotFoundError:
     print('Error: File not found!')
 except PermissionError:
     print('Error: No permission to access the file!')
-</div></section><section class="chapter"><h2 id="pickle" data-toc="pickle">Pickle</h2><p id="z90b228_108">The <code class="code" id="z90b228_118">pickle</code> module allows serializing Python objects in a file, preserving their structure for later retrieval and deserialization.</p><p id="z90b228_109">Example of serializing:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="pickle" data-toc="pickle">Pickle</h2><p id="-zartc8_108">The <code class="code" id="-zartc8_118">pickle</code> module allows serializing Python objects in a file, preserving their structure for later retrieval and deserialization.</p><p id="-zartc8_109">Example of serializing:</p><div class="code-block" data-lang="python">
 import pickle
 
 data = {'name': 'Daniel', 'age': 24, 'city': 'Madrid'}
 
 with open('data.pkl', 'wb') as file:
     pickle.dump(data, file) 
-</div><p id="z90b228_111">Example of deserializing:</p><div class="code-block" data-lang="python">
+</div><p id="-zartc8_111">Example of deserializing:</p><div class="code-block" data-lang="python">
 with open('data.pkl', 'rb') as file:
     loaded_data = pickle.load(file)
 
 print(loaded_data)
-</div><p id="z90b228_113">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-zartc8_113">Output:</p><div class="code-block" data-lang="none">
 {'name': 'Daniel', 'age': 24, 'city': 'Madrid'}
-</div><p id="z90b228_115">Always use binary mode (<code class="code" id="z90b228_119">wb</code>/<code class="code" id="z90b228_120">rb</code>) when working with pickle.</p><p id="z90b228_116">Only works within Python, cannot be directly deserialized by other languages.</p><p id="z90b228_117">Be cautious when deserializing untrusted data, as it can execute arbitrary code.</p></section><section class="chapter"><h2 id="shelve" data-toc="shelve">Shelve</h2><p id="z90b228_121">The <code class="code" id="z90b228_132">shelve</code> module provides a way to store and retrieve Python objects like a dictionary.</p><p id="z90b228_122">It uses <code class="code" id="z90b228_133">pickle</code> internally but offers key-value access.</p><p id="z90b228_123">Example of storing data:</p><div class="code-block" data-lang="python">
+</div><p id="-zartc8_115">Always use binary mode (<code class="code" id="-zartc8_119">wb</code>/<code class="code" id="-zartc8_120">rb</code>) when working with pickle.</p><p id="-zartc8_116">Only works within Python, cannot be directly deserialized by other languages.</p><p id="-zartc8_117">Be cautious when deserializing untrusted data, as it can execute arbitrary code.</p></section><section class="chapter"><h2 id="shelve" data-toc="shelve">Shelve</h2><p id="-zartc8_121">The <code class="code" id="-zartc8_132">shelve</code> module provides a way to store and retrieve Python objects like a dictionary.</p><p id="-zartc8_122">It uses <code class="code" id="-zartc8_133">pickle</code> internally but offers key-value access.</p><p id="-zartc8_123">Example of storing data:</p><div class="code-block" data-lang="python">
 import shelve
 
 with shelve.open('storage.db') as db:
     db['user'] = {'name': 'Daniel', 'age': 24}
     db['settings'] = {'theme': 'dark', 'language': 'EN'}
-</div><p id="z90b228_125">Example of retrieving data:</p><div class="code-block" data-lang="python">
+</div><p id="-zartc8_125">Example of retrieving data:</p><div class="code-block" data-lang="python">
 with shelve.open('storage.db') as db:
     print(db['user'])
     print(db.get('settings', {}))
-</div><p id="z90b228_127">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-zartc8_127">Output:</p><div class="code-block" data-lang="none">
 {'name': 'Daniel', 'age': 30}
 {'theme': 'dark', 'language': 'EN'}
-</div><p id="z90b228_129">Works like a <code class="code" id="z90b228_134">dictionary</code> but persists between executions.</p><p id="z90b228_130">Automatically handles file storage without needing explicit serialization.</p><p id="z90b228_131">Supports only string keys; values can be any serializable object.</p></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="importing-modules.html" class="navigation-links__prev">Importing Modules</a><a href="csv.html" class="navigation-links__next">CSV</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div><p id="-zartc8_129">Works like a <code class="code" id="-zartc8_134">dictionary</code> but persists between executions.</p><p id="-zartc8_130">Automatically handles file storage without needing explicit serialization.</p><p id="-zartc8_131">Supports only string keys; values can be any serializable object.</p></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="importing-modules.html" class="navigation-links__prev">Importing Modules</a><a href="csv.html" class="navigation-links__next">CSV</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

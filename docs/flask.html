@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.388067"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.514833"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,9 +21,9 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Flask" data-main-title="Flask" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Flask" id="Flask.md">Flask</h1><p id="-mzjz64_3">Flask is a lightweight web framework to build web applications quickly.</p><section class="chapter"><h2 id="setting-up-a-flask-project" data-toc="setting-up-a-flask-project">Setting up a Flask project</h2><p id="-mzjz64_12">Install Flask with pip:</p><div class="code-block" data-lang="bash">
+}</script><!-- End Schema.org --></head><body data-id="Flask" data-main-title="Flask" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Flask" id="Flask.md">Flask</h1><p id="z3qh7ek_3">Flask is a lightweight web framework to build web applications quickly.</p><section class="chapter"><h2 id="setting-up-a-flask-project" data-toc="setting-up-a-flask-project">Setting up a Flask project</h2><p id="z3qh7ek_12">Install Flask with pip:</p><div class="code-block" data-lang="bash">
 pip install Flask
-</div><p id="-mzjz64_14">Create a new file <code class="code" id="-mzjz64_19">app.py</code> and write the following code to set up a basic Flask application:</p><div class="code-block" data-lang="python">
+</div><p id="z3qh7ek_14">Create a new file <code class="code" id="z3qh7ek_19">app.py</code> and write the following code to set up a basic Flask application:</p><div class="code-block" data-lang="python">
 from flask import Flask
 
 app = Flask(__name__)
@@ -34,14 +34,14 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run(debug=True)
-</div><p id="-mzjz64_16">Then run the app using:</p><div class="code-block" data-lang="bash">
+</div><p id="z3qh7ek_16">Then run the app using:</p><div class="code-block" data-lang="bash">
 python app.py
-</div><p id="-mzjz64_18">The application will run on <a href="http://127.0.0.1:5000/" id="-mzjz64_20" data-external="true" rel="noopener noreferrer">http://127.0.0.1:5000/</a>.</p></section><section class="chapter"><h2 id="routing-and-handling-requests" data-toc="routing-and-handling-requests">Routing and handling requests</h2><p id="-mzjz64_21">Routes in Flask define the endpoints of the application.</p><p id="-mzjz64_22">You can use decorators to specify which function handles which URL.</p><p id="-mzjz64_23">Example:</p><div class="code-block" data-lang="python">
+</div><p id="z3qh7ek_18">The application will run on <a href="http://127.0.0.1:5000/" id="z3qh7ek_20" data-external="true" rel="noopener noreferrer">http://127.0.0.1:5000/</a>.</p></section><section class="chapter"><h2 id="routing-and-handling-requests" data-toc="routing-and-handling-requests">Routing and handling requests</h2><p id="z3qh7ek_21">Routes in Flask define the endpoints of the application.</p><p id="z3qh7ek_22">You can use decorators to specify which function handles which URL.</p><p id="z3qh7ek_23">Example:</p><div class="code-block" data-lang="python">
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.form['field_name']
     return f'Form data: {data}'
-</div></section><section class="chapter"><h2 id="working-with-templates-jinja2" data-toc="working-with-templates-jinja2">Working with templates (Jinja2)</h2><p id="-mzjz64_25">Flask uses Jinja2 as the templating engine to render HTML. Jinja2 allows you to dynamically generate HTML content from templates.</p><p id="-mzjz64_26">Create an HTML template <code class="code" id="-mzjz64_30">index.html</code>:</p><div class="code-block" data-lang="markup">
+</div></section><section class="chapter"><h2 id="working-with-templates-jinja2" data-toc="working-with-templates-jinja2">Working with templates (Jinja2)</h2><p id="z3qh7ek_25">Flask uses Jinja2 as the templating engine to render HTML. Jinja2 allows you to dynamically generate HTML content from templates.</p><p id="z3qh7ek_26">Create an HTML template <code class="code" id="z3qh7ek_30">index.html</code>:</p><div class="code-block" data-lang="markup">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -52,25 +52,25 @@ def submit():
     &lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</div><p id="-mzjz64_28">Render it from Flask:</p><div class="code-block" data-lang="python">
+</div><p id="z3qh7ek_28">Render it from Flask:</p><div class="code-block" data-lang="python">
 from flask import render_template
 
 @app.route('/greet/&lt;name&gt;')
 def greet(name):
     return render_template('index.html', name=name)
-</div></section><section class="chapter"><h2 id="handling-forms-and-requests-data" data-toc="handling-forms-and-requests-data">Handling forms and requests data</h2><p id="-mzjz64_31">Flask easily handles form data using <code class="code" id="-mzjz64_36">request.form</code> for POST requests.</p><p id="-mzjz64_32">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="handling-forms-and-requests-data" data-toc="handling-forms-and-requests-data">Handling forms and requests data</h2><p id="z3qh7ek_31">Flask easily handles form data using <code class="code" id="z3qh7ek_36">request.form</code> for POST requests.</p><p id="z3qh7ek_32">Example:</p><div class="code-block" data-lang="python">
 from flask import request
 
 @app.route('/submit', methods=['POST'])
 def submit():
     username = request.form['username']
     return f'Username: {username}'
-</div><p id="-mzjz64_34">You can also handle query parameters in a URL with request.args:</p><div class="code-block" data-lang="python">
+</div><p id="z3qh7ek_34">You can also handle query parameters in a URL with request.args:</p><div class="code-block" data-lang="python">
 @app.route('/search')
 def search():
     query = request.args.get('q')
     return f'Search results for: {query}'
-</div></section><section class="chapter"><h2 id="using-flask-extensions-flask-sqlalchemy" data-toc="using-flask-extensions-flask-sqlalchemy">Using Flask extensions: Flask-SQLAlchemy</h2><p id="-mzjz64_37">Flask extensions add extra functionality to Flask applications.</p><p id="-mzjz64_38">Flask-SQLAlchemy allows ORM-based database integration.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="using-flask-extensions-flask-sqlalchemy" data-toc="using-flask-extensions-flask-sqlalchemy">Using Flask extensions: Flask-SQLAlchemy</h2><p id="z3qh7ek_37">Flask extensions add extra functionality to Flask applications.</p><p id="z3qh7ek_38">Flask-SQLAlchemy allows ORM-based database integration.</p><div class="code-block" data-lang="python">
 from flask_sqlalchemy import SQLAlchemy
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
@@ -86,7 +86,7 @@ def add_user():
     db.session.add(new_user)
     db.session.commit()
     return f'User {new_user.username} added!'
-</div></section><section class="chapter"><h2 id="using-flask-extensions-flask-wtf" data-toc="using-flask-extensions-flask-wtf">Using Flask extensions: Flask-WTF</h2><p id="-mzjz64_40">Flask-WTF allows to handle forms with validation.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="using-flask-extensions-flask-wtf" data-toc="using-flask-extensions-flask-wtf">Using Flask extensions: Flask-WTF</h2><p id="z3qh7ek_40">Flask-WTF allows to handle forms with validation.</p><div class="code-block" data-lang="python">
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
@@ -100,7 +100,7 @@ def form():
     if form.validate_on_submit():
         return f'Hello, {form.name.data}!'
     return render_template('form.html', form=form)
-</div></section><section class="chapter"><h2 id="error-handling-and-logging-in-flask" data-toc="error-handling-and-logging-in-flask">Error handling and logging in Flask</h2><p id="-mzjz64_42">Flask allows to manage errors and log important application events.</p><p id="-mzjz64_43">To handle specific HTTP errors, use error handlers:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="error-handling-and-logging-in-flask" data-toc="error-handling-and-logging-in-flask">Error handling and logging in Flask</h2><p id="z3qh7ek_42">Flask allows to manage errors and log important application events.</p><p id="z3qh7ek_43">To handle specific HTTP errors, use error handlers:</p><div class="code-block" data-lang="python">
 import logging
 
 app.logger.setLevel(logging.DEBUG)
@@ -109,8 +109,8 @@ app.logger.setLevel(logging.DEBUG)
 def not_found(error):
     app.logger.debug('Error 404')
     return 'This page does not exist!', 404
-</div></section><section class="chapter"><h2 id="deployment-of-flask-applications" data-toc="deployment-of-flask-applications">Deployment of Flask applications</h2><p id="-mzjz64_45">Flask is not intended to be used directly in production. To deploy it to production you must use WSGI servers like Gunicorn or uWSGI.</p><p id="-mzjz64_46">Install Gunicorn</p><div class="code-block" data-lang="bash">
+</div></section><section class="chapter"><h2 id="deployment-of-flask-applications" data-toc="deployment-of-flask-applications">Deployment of Flask applications</h2><p id="z3qh7ek_45">Flask is not intended to be used directly in production. To deploy it to production you must use WSGI servers like Gunicorn or uWSGI.</p><p id="z3qh7ek_46">Install Gunicorn</p><div class="code-block" data-lang="bash">
 pip install gunicorn
-</div><p id="-mzjz64_48">Run it:</p><div class="code-block" data-lang="bash">
+</div><p id="z3qh7ek_48">Run it:</p><div class="code-block" data-lang="bash">
 gunicorn app:app
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="requests.html" class="navigation-links__prev">Requests</a><a href="fastapi.html" class="navigation-links__next">FastAPI</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="requests.html" class="navigation-links__prev">Requests</a><a href="fastapi.html" class="navigation-links__next">FastAPI</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

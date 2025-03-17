@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.344863"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.503089"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,25 +21,25 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="JSON" data-main-title="JSON" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="JSON" id="JSON.md">JSON</h1><section class="chapter"><h2 id="reading-and-writing-json-files" data-toc="reading-and-writing-json-files">Reading and writing JSON files</h2><p id="z2awynv_6">The <code class="code" id="z2awynv_14">json</code> module allows reading and writing JSON files using <code class="code" id="z2awynv_15">json.load()</code> and <code class="code" id="z2awynv_16">json.dump()</code>.</p><p id="z2awynv_7">JSON objects are mapped to <code class="code" id="z2awynv_17">dict</code>, while JSON arrays are converted into <code class="code" id="z2awynv_18">list</code>. Other native types, such as strings, integers, floats, and booleans, are also directly supported.</p><p id="z2awynv_8">Example writing a <code class="code" id="z2awynv_19">dict</code> to a JSON file:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="JSON" data-main-title="JSON" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Advanced Python Module Usage"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="JSON" id="JSON.md">JSON</h1><section class="chapter"><h2 id="reading-and-writing-json-files" data-toc="reading-and-writing-json-files">Reading and writing JSON files</h2><p id="-f5y8lp_6">The <code class="code" id="-f5y8lp_14">json</code> module allows reading and writing JSON files using <code class="code" id="-f5y8lp_15">json.load()</code> and <code class="code" id="-f5y8lp_16">json.dump()</code>.</p><p id="-f5y8lp_7">JSON objects are mapped to <code class="code" id="-f5y8lp_17">dict</code>, while JSON arrays are converted into <code class="code" id="-f5y8lp_18">list</code>. Other native types, such as strings, integers, floats, and booleans, are also directly supported.</p><p id="-f5y8lp_8">Example writing a <code class="code" id="-f5y8lp_19">dict</code> to a JSON file:</p><div class="code-block" data-lang="python">
 import json
 
 data = {'name': 'Daniel', 'age': 24}
 with open('data.json', 'w') as file:
     json.dump(data, file)
-</div><p id="z2awynv_10">Example reading a JSON file into a <code class="code" id="z2awynv_20">dict</code>:</p><div class="code-block" data-lang="python">
+</div><p id="-f5y8lp_10">Example reading a JSON file into a <code class="code" id="-f5y8lp_20">dict</code>:</p><div class="code-block" data-lang="python">
 with open('data.json', 'r') as file:
     loaded_data = json.load(file)
 print(loaded_data)
-</div><p id="z2awynv_12">Output:</p><div class="code-block" data-lang="python">
+</div><p id="-f5y8lp_12">Output:</p><div class="code-block" data-lang="python">
 {'name': 'Daniel', 'age': 24}
-</div></section><section class="chapter"><h2 id="parsing-json-data" data-toc="parsing-json-data">Parsing JSON data</h2><p id="z2awynv_21">To parse a JSON <code class="code" id="z2awynv_26">string</code> into a Python object, use <code class="code" id="z2awynv_27">json.loads()</code>.</p><p id="z2awynv_22">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="parsing-json-data" data-toc="parsing-json-data">Parsing JSON data</h2><p id="-f5y8lp_21">To parse a JSON <code class="code" id="-f5y8lp_26">string</code> into a Python object, use <code class="code" id="-f5y8lp_27">json.loads()</code>.</p><p id="-f5y8lp_22">Example:</p><div class="code-block" data-lang="python">
 json_string = '{&quot;name&quot;: &quot;Daniel&quot;, &quot;age&quot;: 24}'
 parsed_data = json.loads(json_string)
 print(parsed_data['name'])
-</div><p id="z2awynv_24">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-f5y8lp_24">Output:</p><div class="code-block" data-lang="none">
 Daniel
-</div></section><section class="chapter"><h2 id="handling-complex-data-structures-in-json" data-toc="handling-complex-data-structures-in-json">Handling complex data structures in JSON</h2><p id="z2awynv_28">For custom objects, define a function for serialization.</p><p id="z2awynv_29">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="handling-complex-data-structures-in-json" data-toc="handling-complex-data-structures-in-json">Handling complex data structures in JSON</h2><p id="-f5y8lp_28">For custom objects, define a function for serialization.</p><p id="-f5y8lp_29">Example:</p><div class="code-block" data-lang="python">
 class City:
     def __init__(self, name, temperature):
         self.name = name
@@ -51,6 +51,6 @@ def city_to_dict(city):
 city = City('Madrid', 45)
 json_data = json.dumps(city, default=city_to_dict)
 print(json_data)
-</div><p id="z2awynv_31">Output:</p><div class="code-block" data-lang="python">
+</div><p id="-f5y8lp_31">Output:</p><div class="code-block" data-lang="python">
 {'name': 'Madrid', 'temperature': 45}
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="sqlite3.html" class="navigation-links__prev">SQLite3</a><a href="xml.html" class="navigation-links__next">XML</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="sqlite3.html" class="navigation-links__prev">SQLite3</a><a href="xml.html" class="navigation-links__next">XML</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

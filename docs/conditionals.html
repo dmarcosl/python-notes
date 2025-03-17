@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.386515"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.54056"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,35 +21,35 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Conditionals" data-main-title="Conditionals" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Conditionals" id="Conditionals.md">Conditionals</h1><section class="chapter"><h2 id="if-elif-and-else-statements" data-toc="if-elif-and-else-statements">if, elif, and else Statements</h2><p id="d942nq_5">Python provides <code class="code" id="d942nq_13">if</code>, <code class="code" id="d942nq_14">elif</code> and <code class="code" id="d942nq_15">else</code> statements to evaluate conditions.</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Conditionals" data-main-title="Conditionals" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Conditionals" id="Conditionals.md">Conditionals</h1><section class="chapter"><h2 id="if-elif-and-else-statements" data-toc="if-elif-and-else-statements">if, elif, and else Statements</h2><p id="-k6rm6q_5">Python provides <code class="code" id="-k6rm6q_13">if</code>, <code class="code" id="-k6rm6q_14">elif</code> and <code class="code" id="-k6rm6q_15">else</code> statements to evaluate conditions.</p><div class="code-block" data-lang="python">
 if n1 &gt; n2:
     print('n1 is higher than n2')
 elif n1 &lt; n2:
     print('n1 is lesser than n2')
 else:
     print('n1 is equals to n2')
-</div><p id="d942nq_7">Several conditions can be used in the same <code class="code" id="d942nq_16">if</code> statement by using <code class="code" id="d942nq_17">and</code> and <code class="code" id="d942nq_18">or</code> operators.</p><div class="code-block" data-lang="python">
+</div><p id="-k6rm6q_7">Several conditions can be used in the same <code class="code" id="-k6rm6q_16">if</code> statement by using <code class="code" id="-k6rm6q_17">and</code> and <code class="code" id="-k6rm6q_18">or</code> operators.</p><div class="code-block" data-lang="python">
 if (n1 &gt; 5 and n2 &gt; 6) or n1 &lt; 1:
     print('n1 is higher than 5 and n2 is higher than 6')
     print('or n1 is lesser than 1')
-</div><p id="d942nq_9">Others operators can be used in the conditions.</p><div class="code-block" data-lang="python">
+</div><p id="-k6rm6q_9">Others operators can be used in the conditions.</p><div class="code-block" data-lang="python">
 if n1 in [1, 2, 3, 4]:
     print('n1 is contained in the list')
 elif n1 is False:
     print('n1 is False')
 elif type(n1) is int:
     print('the type of n1 is int')
-</div><p id="d942nq_11">Some conditions can be combined.</p><div class="code-block" data-lang="python">
+</div><p id="-k6rm6q_11">Some conditions can be combined.</p><div class="code-block" data-lang="python">
 if n1 &gt; n2 &lt; n3:
     print('n1 is higher than n2 and n2 is lesser than n3)
 elif n1 &gt; n2 and n2 &lt; n3:
     print('the same as before')
-</div></section><section class="chapter"><h2 id="ternary-operator" data-toc="ternary-operator">Ternary Operator</h2><p id="d942nq_19">The ternary operator allows you to write simple <code class="code" id="d942nq_26">if</code>-<code class="code" id="d942nq_27">else</code> conditions in a single line.</p><p id="d942nq_20">Syntax:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="ternary-operator" data-toc="ternary-operator">Ternary Operator</h2><p id="-k6rm6q_19">The ternary operator allows you to write simple <code class="code" id="-k6rm6q_26">if</code>-<code class="code" id="-k6rm6q_27">else</code> conditions in a single line.</p><p id="-k6rm6q_20">Syntax:</p><div class="code-block" data-lang="python">
 result = value_if_true if condition else value_if_false
-</div><p id="d942nq_22">Example:</p><div class="code-block" data-lang="python">
+</div><p id="-k6rm6q_22">Example:</p><div class="code-block" data-lang="python">
 age = 16
 message = 'You can drink.' if age &gt;= 18 else 'You can't drink.'
 print(message)
-</div><p id="d942nq_24">Output:</p><div class="code-block" data-lang="none">
+</div><p id="-k6rm6q_24">Output:</p><div class="code-block" data-lang="none">
 You can't drink.
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="iteration.html" class="navigation-links__prev">Iteration</a><a href="functions.html" class="navigation-links__next">Functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="iteration.html" class="navigation-links__prev">Iteration</a><a href="functions.html" class="navigation-links__next">Functions</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

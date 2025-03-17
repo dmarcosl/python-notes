@@ -7,7 +7,7 @@
         <primary-color>#A08C1F</primary-color>
         <color-preset>contrast</color-preset>
         <resizable-sidebar>false</resizable-sidebar>
-        <header-logo>https://resources.jetbrains.com/help/img/writerside/writerside.svg</header-logo>
+        <header-logo>https://raw.githubusercontent.com/github/explore/main/topics/python/python.png</header-logo>
         <product-web-url>https://github.com/dmarcosl</product-web-url>
 	<analytics-head-script-file>analytics.js</analytics-head-script-file>
     </variables>

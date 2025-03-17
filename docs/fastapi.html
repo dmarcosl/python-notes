@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.391672"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.530032"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,9 +21,9 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="FastAPI" data-main-title="FastAPI" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="FastAPI" id="FastAPI.md">FastAPI</h1><p id="-9ylis7_3">FastAPI is a high-performance web framework for building APIs, designed for asynchronous operations.</p><p id="-9ylis7_4">It simplifies creating RESTful APIs with automatic data validation and OpenAPI documentation.</p><section class="chapter"><h2 id="introduction-to-fastapi" data-toc="introduction-to-fastapi">Introduction to FastAPI</h2><p id="-9ylis7_12">Install FastAPI and an asynchronous WSGI server</p><div class="code-block" data-lang="bash">
+}</script><!-- End Schema.org --></head><body data-id="FastAPI" data-main-title="FastAPI" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="FastAPI" id="FastAPI.md">FastAPI</h1><p id="stb5td_3">FastAPI is a high-performance web framework for building APIs, designed for asynchronous operations.</p><p id="stb5td_4">It simplifies creating RESTful APIs with automatic data validation and OpenAPI documentation.</p><section class="chapter"><h2 id="introduction-to-fastapi" data-toc="introduction-to-fastapi">Introduction to FastAPI</h2><p id="stb5td_12">Install FastAPI and an asynchronous WSGI server</p><div class="code-block" data-lang="bash">
 pip install fastapi uvicorn
-</div><p id="-9ylis7_14">Create a new file <code class="code" id="-9ylis7_18">app.py</code> and write the following code to set up a basic FastAPI application:</p><div class="code-block" data-lang="python">
+</div><p id="stb5td_14">Create a new file <code class="code" id="stb5td_18">app.py</code> and write the following code to set up a basic FastAPI application:</p><div class="code-block" data-lang="python">
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -31,13 +31,13 @@ app = FastAPI()
 @app.get('/')
 def read_root():
     return {'message': 'Hello, World!'}
-</div><p id="-9ylis7_16">Then run the app using:</p><div class="code-block" data-lang="bash">
+</div><p id="stb5td_16">Then run the app using:</p><div class="code-block" data-lang="bash">
 uvicorn app:app --reload
-</div></section><section class="chapter"><h2 id="setting-up-routes-and-handling-requests" data-toc="setting-up-routes-and-handling-requests">Setting up routes and handling requests</h2><p id="-9ylis7_19">Routes in FastAPI define the API endpoints.</p><p id="-9ylis7_20">Request data can be accessed using path parameters, query parameters, and request bodies.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="setting-up-routes-and-handling-requests" data-toc="setting-up-routes-and-handling-requests">Setting up routes and handling requests</h2><p id="stb5td_19">Routes in FastAPI define the API endpoints.</p><p id="stb5td_20">Request data can be accessed using path parameters, query parameters, and request bodies.</p><div class="code-block" data-lang="python">
 @app.get('/greet/{name}')
 def greet(name: str):
     return {'message': f'Hello, {name}!'}
-</div></section><section class="chapter"><h2 id="dependency-injection-and-middleware" data-toc="dependency-injection-and-middleware">Dependency injection and middleware</h2><p id="-9ylis7_22">FastAPI supports dependency injection to manage shared resources such as database connections, authentication, etc.</p><p id="-9ylis7_23">You can define dependencies and inject them into routes.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="dependency-injection-and-middleware" data-toc="dependency-injection-and-middleware">Dependency injection and middleware</h2><p id="stb5td_22">FastAPI supports dependency injection to manage shared resources such as database connections, authentication, etc.</p><p id="stb5td_23">You can define dependencies and inject them into routes.</p><div class="code-block" data-lang="python">
 from fastapi import Depends
 
 def get_db():
@@ -47,7 +47,7 @@ def get_db():
 @app.get('/items')
 def get_items(db: str = Depends(get_db)):
     return {'db': db}
-</div><p id="-9ylis7_25">Middleware allows you to handle requests and responses globally.</p><p id="-9ylis7_26">It&rsquo;s useful for tasks like logging, CORS handling, etc.</p><div class="code-block" data-lang="python">
+</div><p id="stb5td_25">Middleware allows you to handle requests and responses globally.</p><p id="stb5td_26">It&rsquo;s useful for tasks like logging, CORS handling, etc.</p><div class="code-block" data-lang="python">
 from fastapi import FastAPI
 from starlette.middleware.base import BaseHTTPMiddleware
 
@@ -58,7 +58,7 @@ class CustomMiddleware(BaseHTTPMiddleware):
         return response
 
 app.add_middleware(CustomMiddleware)
-</div></section><section class="chapter"><h2 id="validating-request-data-using-pydantic-models" data-toc="validating-request-data-using-pydantic-models">Validating request data using Pydantic models</h2><p id="-9ylis7_28">FastAPI uses Pydantic models to validate incoming data, ensuring that the correct data types are received.</p><p id="-9ylis7_29">You define Pydantic models to specify the structure of the data expected.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="validating-request-data-using-pydantic-models" data-toc="validating-request-data-using-pydantic-models">Validating request data using Pydantic models</h2><p id="stb5td_28">FastAPI uses Pydantic models to validate incoming data, ensuring that the correct data types are received.</p><p id="stb5td_29">You define Pydantic models to specify the structure of the data expected.</p><div class="code-block" data-lang="python">
 from pydantic import BaseModel
 
 class Item(BaseModel):
@@ -68,12 +68,12 @@ class Item(BaseModel):
 @app.post('/items/')
 def create_item(item: Item):
     return {'name': item.name, 'price': item.price}
-</div><p id="-9ylis7_31">FastAPI automatically validates the input data based on the <code class="code" id="-9ylis7_32">Item</code> model and generates an error response if the data is invalid.</p></section><section class="chapter"><h2 id="asynchronous-support-with-fastapi" data-toc="asynchronous-support-with-fastapi">Asynchronous support with FastAPI</h2><p id="-9ylis7_33">FastAPI supports asynchronous programming using <code class="code" id="-9ylis7_36">async</code> and <code class="code" id="-9ylis7_37">await</code>.</p><p id="-9ylis7_34">This allows you to handle non-blocking I/O operations efficiently, such as database queries, file handling, or HTTP requests.</p><div class="code-block" data-lang="python">
+</div><p id="stb5td_31">FastAPI automatically validates the input data based on the <code class="code" id="stb5td_32">Item</code> model and generates an error response if the data is invalid.</p></section><section class="chapter"><h2 id="asynchronous-support-with-fastapi" data-toc="asynchronous-support-with-fastapi">Asynchronous support with FastAPI</h2><p id="stb5td_33">FastAPI supports asynchronous programming using <code class="code" id="stb5td_36">async</code> and <code class="code" id="stb5td_37">await</code>.</p><p id="stb5td_34">This allows you to handle non-blocking I/O operations efficiently, such as database queries, file handling, or HTTP requests.</p><div class="code-block" data-lang="python">
 @app.get('/async-items/')
 async def get_items():
     await asyncio.sleep(1)  # Simulate async task
     return {'items': ['item1', 'item2']}
-</div></section><section class="chapter"><h2 id="fastapi-authentication-mechanisms" data-toc="fastapi-authentication-mechanisms">FastAPI authentication mechanisms</h2><p id="-9ylis7_38">FastAPI offers authentication mechanisms with OAuth2 and JWT for securing the API.</p><p id="-9ylis7_39">These can be easily integrated with FastAPI's built-in tools.</p><p id="-9ylis7_40">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="fastapi-authentication-mechanisms" data-toc="fastapi-authentication-mechanisms">FastAPI authentication mechanisms</h2><p id="stb5td_38">FastAPI offers authentication mechanisms with OAuth2 and JWT for securing the API.</p><p id="stb5td_39">These can be easily integrated with FastAPI's built-in tools.</p><p id="stb5td_40">Example:</p><div class="code-block" data-lang="python">
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 import jwt
@@ -92,6 +92,6 @@ def verify_token(token: str = Depends(oauth2_scheme)):
 @app.get('/protected/')
 def protected_route(token: str = Depends(verify_token)):
     return {'message': 'You are authorized', 'token_data': token}
-</div></section><section class="chapter"><h2 id="generating-openapi-documentation" data-toc="generating-openapi-documentation">Generating OpenAPI Documentation</h2><p id="-9ylis7_42">FastAPI automatically generates OpenAPI documentation based on the Python code, providing an interactive UI where users can explore and test the API.</p><p id="-9ylis7_43">To access the documentation, start the app and visit <code class="code" id="-9ylis7_47">/docs</code> or <code class="code" id="-9ylis7_48">/redoc</code> for alternative documentation formats:</p><div class="code-block" data-lang="bash">
+</div></section><section class="chapter"><h2 id="generating-openapi-documentation" data-toc="generating-openapi-documentation">Generating OpenAPI Documentation</h2><p id="stb5td_42">FastAPI automatically generates OpenAPI documentation based on the Python code, providing an interactive UI where users can explore and test the API.</p><p id="stb5td_43">To access the documentation, start the app and visit <code class="code" id="stb5td_47">/docs</code> or <code class="code" id="stb5td_48">/redoc</code> for alternative documentation formats:</p><div class="code-block" data-lang="bash">
 uvicorn app:app --reload
-</div><p id="-9ylis7_45">Go to <a href="http://127.0.0.1:8000/docs" id="-9ylis7_49" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/docs</a> for the interactive Swagger UI or <a href="http://127.0.0.1:8000/redoc" id="-9ylis7_50" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/redoc</a> for ReDoc documentation.</p><p id="-9ylis7_46">You can also export the OpenAPI spec from FastAPI by visiting <a href="http://127.0.0.1:8000/openapi.json" id="-9ylis7_51" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/openapi.json</a>.</p></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="flask.html" class="navigation-links__prev">Flask</a><a href="celery.html" class="navigation-links__next">Celery</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div><p id="stb5td_45">Go to <a href="http://127.0.0.1:8000/docs" id="stb5td_49" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/docs</a> for the interactive Swagger UI or <a href="http://127.0.0.1:8000/redoc" id="stb5td_50" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/redoc</a> for ReDoc documentation.</p><p id="stb5td_46">You can also export the OpenAPI spec from FastAPI by visiting <a href="http://127.0.0.1:8000/openapi.json" id="stb5td_51" data-external="true" rel="noopener noreferrer">http://127.0.0.1:8000/openapi.json</a>.</p></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="flask.html" class="navigation-links__prev">Flask</a><a href="celery.html" class="navigation-links__next">Celery</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

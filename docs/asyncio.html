@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.371719"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.531747"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,7 +21,7 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Asyncio" data-main-title="Asyncio" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Asyncio" id="Asyncio.md">Asyncio</h1><p id="-47mcez_3"><code class="code" id="-47mcez_11">asyncio</code> is a standard library for writing concurrent programs using the <code class="code" id="-47mcez_12">async</code>/<code class="code" id="-47mcez_13">await</code> syntax.</p><p id="-47mcez_4">It allows running multiple tasks concurrently without needing multiple threads or processes.</p><p id="-47mcez_5">Instead of using threads, asyncio utilizes a single thread and an event loop to manage concurrent tasks.</p><section class="chapter"><h2 id="using-asyncio-for-concurrent-execution" data-toc="using-asyncio-for-concurrent-execution">Using asyncio for concurrent execution</h2><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Asyncio" data-main-title="Asyncio" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Frameworks and Libraries"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Asyncio" id="Asyncio.md">Asyncio</h1><p id="ykac6l_3"><code class="code" id="ykac6l_11">asyncio</code> is a standard library for writing concurrent programs using the <code class="code" id="ykac6l_12">async</code>/<code class="code" id="ykac6l_13">await</code> syntax.</p><p id="ykac6l_4">It allows running multiple tasks concurrently without needing multiple threads or processes.</p><p id="ykac6l_5">Instead of using threads, asyncio utilizes a single thread and an event loop to manage concurrent tasks.</p><section class="chapter"><h2 id="using-asyncio-for-concurrent-execution" data-toc="using-asyncio-for-concurrent-execution">Using asyncio for concurrent execution</h2><div class="code-block" data-lang="python">
 import asyncio
 
 async def task1():
@@ -39,7 +39,7 @@ async def main():
 
 # Running the event loop
 asyncio.run(main())
-</div><p id="-47mcez_15">In this example, <code class="code" id="-47mcez_16">task1()</code> and <code class="code" id="-47mcez_17">task2()</code> run concurrently, and the event loop handles both tasks.</p></section><section class="chapter"><h2 id="writing-asynchronous-functions" data-toc="writing-asynchronous-functions">Writing asynchronous functions</h2><p id="-47mcez_18">Asynchronous functions in Python are defined using <code class="code" id="-47mcez_22">async def</code>, instead of <code class="code" id="-47mcez_23">def</code>, allowing the use of <code class="code" id="-47mcez_24">await</code> within the function to pause its execution and wait for results from other asynchronous tasks.</p><p id="-47mcez_19">The <code class="code" id="-47mcez_25">await</code> keyword allows other tasks to execute while waiting.</p><p id="-47mcez_20">Example:</p><div class="code-block" data-lang="python">
+</div><p id="ykac6l_15">In this example, <code class="code" id="ykac6l_16">task1()</code> and <code class="code" id="ykac6l_17">task2()</code> run concurrently, and the event loop handles both tasks.</p></section><section class="chapter"><h2 id="writing-asynchronous-functions" data-toc="writing-asynchronous-functions">Writing asynchronous functions</h2><p id="ykac6l_18">Asynchronous functions in Python are defined using <code class="code" id="ykac6l_22">async def</code>, instead of <code class="code" id="ykac6l_23">def</code>, allowing the use of <code class="code" id="ykac6l_24">await</code> within the function to pause its execution and wait for results from other asynchronous tasks.</p><p id="ykac6l_19">The <code class="code" id="ykac6l_25">await</code> keyword allows other tasks to execute while waiting.</p><p id="ykac6l_20">Example:</p><div class="code-block" data-lang="python">
 async def fetch_data():
     print('Fetching data...')
     await asyncio.sleep(2)  # Simulating an I/O operation
@@ -51,7 +51,7 @@ async def main():
     print(result)
 
 asyncio.run(main())
-</div></section><section class="chapter"><h2 id="managing-event-loops-and-background-tasks" data-toc="managing-event-loops-and-background-tasks">Managing event loops and background tasks</h2><section class="chapter"><h3 id="event-loop" data-toc="event-loop">Event Loop</h3><p id="-47mcez_28">The event loop in <code class="code" id="-47mcez_33">asyncio</code> is responsible for managing asynchronous tasks.</p><p id="-47mcez_29">Python has a default event loop that can be used to run multiple tasks concurrently.</p><p id="-47mcez_30">It's important to manage it properly, especially when using web frameworks like Flask or FastAPI that have their own event loops.</p><p id="-47mcez_31">Example of a manual event loop:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="managing-event-loops-and-background-tasks" data-toc="managing-event-loops-and-background-tasks">Managing event loops and background tasks</h2><section class="chapter"><h3 id="event-loop" data-toc="event-loop">Event Loop</h3><p id="ykac6l_28">The event loop in <code class="code" id="ykac6l_33">asyncio</code> is responsible for managing asynchronous tasks.</p><p id="ykac6l_29">Python has a default event loop that can be used to run multiple tasks concurrently.</p><p id="ykac6l_30">It's important to manage it properly, especially when using web frameworks like Flask or FastAPI that have their own event loops.</p><p id="ykac6l_31">Example of a manual event loop:</p><div class="code-block" data-lang="python">
 import asyncio
 
 async def task():
@@ -60,7 +60,7 @@ async def task():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(task())
-</div></section><section class="chapter"><h3 id="background-tasks" data-toc="background-tasks">Background Tasks</h3><p id="-47mcez_34">In web applications, it is common to run background tasks.</p><p id="-47mcez_35">You can manage these tasks in Flask or FastAPI using asyncio.</p><p id="-47mcez_36">Example with FastAPI:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h3 id="background-tasks" data-toc="background-tasks">Background Tasks</h3><p id="ykac6l_34">In web applications, it is common to run background tasks.</p><p id="ykac6l_35">You can manage these tasks in Flask or FastAPI using asyncio.</p><p id="ykac6l_36">Example with FastAPI:</p><div class="code-block" data-lang="python">
 from fastapi import FastAPI, BackgroundTasks
 
 app = FastAPI()
@@ -72,7 +72,7 @@ def background_task(name: str):
 async def hello(background_tasks: BackgroundTasks):
     background_tasks.add_task(background_task, 'FastAPI User')
     return {'message': 'Task is running in the background'}
-</div></section></section><section class="chapter"><h2 id="running-asynchronous-tasks-in-flask" data-toc="running-asynchronous-tasks-in-flask">Running asynchronous tasks in Flask</h2><p id="-47mcez_38">Flask does not have built-in support for asynchronous tasks, but you can use asyncio to run tasks in the background. It is important to run asynchronous functions inside an event loop.</p><p id="-47mcez_39">Example:</p><div class="code-block" data-lang="python">
+</div></section></section><section class="chapter"><h2 id="running-asynchronous-tasks-in-flask" data-toc="running-asynchronous-tasks-in-flask">Running asynchronous tasks in Flask</h2><p id="ykac6l_38">Flask does not have built-in support for asynchronous tasks, but you can use asyncio to run tasks in the background. It is important to run asynchronous functions inside an event loop.</p><p id="ykac6l_39">Example:</p><div class="code-block" data-lang="python">
 from flask import Flask
 import asyncio
 
@@ -90,7 +90,7 @@ async def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
-</div></section><section class="chapter"><h2 id="running-asynchronous-tasks-in-fastapi" data-toc="running-asynchronous-tasks-in-fastapi">Running asynchronous tasks in FastAPI</h2><p id="-47mcez_41">FastAPI supports asynchronous functions natively thanks to its integration with asyncio.</p><p id="-47mcez_42">Routes can be defined with <code class="code" id="-47mcez_44">async def</code>, allowing tasks to run concurrently.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="running-asynchronous-tasks-in-fastapi" data-toc="running-asynchronous-tasks-in-fastapi">Running asynchronous tasks in FastAPI</h2><p id="ykac6l_41">FastAPI supports asynchronous functions natively thanks to its integration with asyncio.</p><p id="ykac6l_42">Routes can be defined with <code class="code" id="ykac6l_44">async def</code>, allowing tasks to run concurrently.</p><div class="code-block" data-lang="python">
 from fastapi import FastAPI
 import asyncio
 
@@ -105,4 +105,4 @@ async def root():
     task = asyncio.create_task(background_task())
     await task
     return {'message': 'Task executed in background'}
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="sqlalchemy.html" class="navigation-links__prev">SQLAlchemy</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="sqlalchemy.html" class="navigation-links__prev">SQLAlchemy</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-12T13:36:16.355471"><!-- Google tag (gtag.js) -->
+<html lang="en-US" data-preset="contrast" data-primary-color="#A08C1F" data-resizable-sidebar="false"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2025-03-17T15:32:36.51483"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKCVR45PQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,24 +21,24 @@
     "@id": "writerside-documentation/#website",
     "url": "writerside-documentation/",
     "name": "Python Notes Help"
-}</script><!-- End Schema.org --></head><body data-id="Classes-and-Objects" data-main-title="Classes and Objects" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Classes-and-Objects" id="Classes-and-Objects.md">Classes and Objects</h1><section class="chapter"><h2 id="class-definition" data-toc="class-definition">Class Definition</h2><p id="en12kw_11">A class is a blueprint for creating objects (instances).</p><p id="en12kw_12">It defines the attributes and behaviors that the objects created from it will have.</p><p id="en12kw_13">Example of an empty class, just defining the structure:</p><div class="code-block" data-lang="python">
+}</script><!-- End Schema.org --></head><body data-id="Classes-and-Objects" data-main-title="Classes and Objects" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Python Language Basics"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Python Notes  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Classes-and-Objects" id="Classes-and-Objects.md">Classes and Objects</h1><section class="chapter"><h2 id="class-definition" data-toc="class-definition">Class Definition</h2><p id="z6s8tzs_11">A class is a blueprint for creating objects (instances).</p><p id="z6s8tzs_12">It defines the attributes and behaviors that the objects created from it will have.</p><p id="z6s8tzs_13">Example of an empty class, just defining the structure:</p><div class="code-block" data-lang="python">
 class Person:
     pass
-</div></section><section class="chapter"><h2 id="constructor" data-toc="constructor">Constructor</h2><p id="en12kw_15">The constructor method <code class="code" id="en12kw_19">__init__</code> is a special method in Python classes.</p><p id="en12kw_16">It is automatically called when a new object (instance) of the class is created.</p><p id="en12kw_17">This method is used to initialize the attributes of the object.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="constructor" data-toc="constructor">Constructor</h2><p id="z6s8tzs_15">The constructor method <code class="code" id="z6s8tzs_19">__init__</code> is a special method in Python classes.</p><p id="z6s8tzs_16">It is automatically called when a new object (instance) of the class is created.</p><p id="z6s8tzs_17">This method is used to initialize the attributes of the object.</p><div class="code-block" data-lang="python">
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-</div></section><section class="chapter"><h2 id="instance-vs-class-variables" data-toc="instance-vs-class-variables">Instance vs. Class Variables</h2><p id="en12kw_20">A class can have instance variables (specific to each object) and class variables (shared by all objects of the class).</p><p id="en12kw_21">Each instance of a class can have its own set of attributes, but class variables are shared among all instances.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="instance-vs-class-variables" data-toc="instance-vs-class-variables">Instance vs. Class Variables</h2><p id="z6s8tzs_20">A class can have instance variables (specific to each object) and class variables (shared by all objects of the class).</p><p id="z6s8tzs_21">Each instance of a class can have its own set of attributes, but class variables are shared among all instances.</p><div class="code-block" data-lang="python">
 class Person:
     city = 'Madrid'  # Class variable shared by all instances
     def __init__(self, name, age):
         self.name = name  # Instance variable unique to each instance
         self.age = age  # Instance variable unique to each instance
-</div></section><section class="chapter"><h2 id="object-creation" data-toc="object-creation">Object Creation</h2><p id="en12kw_23">Once a class is defined, you can create an object (or instance) of that class.</p><p id="en12kw_24">To create an object, call the class name and pass the arguments required by the constructor.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="object-creation" data-toc="object-creation">Object Creation</h2><p id="z6s8tzs_23">Once a class is defined, you can create an object (or instance) of that class.</p><p id="z6s8tzs_24">To create an object, call the class name and pass the arguments required by the constructor.</p><div class="code-block" data-lang="python">
 person1 = Person('Daniel', 24)
 person2 = Person('Álex', 23)
-</div></section><section class="chapter"><h2 id="methods" data-toc="methods">Methods</h2><p id="en12kw_26">A method is a function defined inside a class that operates on instances of that class.</p><p id="en12kw_27">Methods must always include self as the first parameter, which represents the instance of the class.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="methods" data-toc="methods">Methods</h2><p id="z6s8tzs_26">A method is a function defined inside a class that operates on instances of that class.</p><p id="z6s8tzs_27">Methods must always include self as the first parameter, which represents the instance of the class.</p><div class="code-block" data-lang="python">
 class Person:
     city = 'Madrid'
     def __init__(self, name, age):
@@ -47,12 +47,12 @@ class Person:
     
     def greet(self):
         print(f'Hello, my name is {self.name}, I am {self.age} and I live in {Person.city}.')
-</div><p id="en12kw_29">Calling the method:</p><div class="code-block" data-lang="python">
+</div><p id="z6s8tzs_29">Calling the method:</p><div class="code-block" data-lang="python">
 person1 = Person('Daniel', 30)
 person1.greet()
-</div><p id="en12kw_31">Output:</p><div class="code-block" data-lang="none">
+</div><p id="z6s8tzs_31">Output:</p><div class="code-block" data-lang="none">
 Hello, my name is Daniel, I am 30 and I live in Madrid.
-</div></section><section class="chapter"><h2 id="inheritance" data-toc="inheritance">Inheritance</h2><p id="en12kw_33">Inheritance allows one class (the child class) to inherit the attributes and methods from another class (the parent class).</p><p id="en12kw_34">This is useful when you want to create a new class that has the same behavior as an existing class, with additional or modified behavior.</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="inheritance" data-toc="inheritance">Inheritance</h2><p id="z6s8tzs_33">Inheritance allows one class (the child class) to inherit the attributes and methods from another class (the parent class).</p><p id="z6s8tzs_34">This is useful when you want to create a new class that has the same behavior as an existing class, with additional or modified behavior.</p><div class="code-block" data-lang="python">
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -63,14 +63,14 @@ class Animal:
 class Dog(Animal):
     def speak(self):
         print(f'{self.name} says woof!')
-</div><p id="en12kw_36">Calling the method:</p><div class="code-block" data-lang="python">
+</div><p id="z6s8tzs_36">Calling the method:</p><div class="code-block" data-lang="python">
 animal = Animal('Animalus')
 animal.speak()
 dog = Dog('doge')
 dog.speak()
-</div><p id="en12kw_38">Output:</p><div class="code-block" data-lang="none">
+</div><p id="z6s8tzs_38">Output:</p><div class="code-block" data-lang="none">
 doge says woof!
-</div></section><section class="chapter"><h2 id="class-methods-and-static-methods" data-toc="class-methods-and-static-methods">Class Methods and Static Methods</h2><p id="en12kw_40">Class Method is a method that is bound to the class, not the instance. It is often used to modify the state of the class.</p><p id="en12kw_41">Static Method is a method that doesn't access or modify the class state or instance state. It's a general utility function that could be placed within the class for organizational purposes.</p><p id="en12kw_42">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="class-methods-and-static-methods" data-toc="class-methods-and-static-methods">Class Methods and Static Methods</h2><p id="z6s8tzs_40">Class Method is a method that is bound to the class, not the instance. It is often used to modify the state of the class.</p><p id="z6s8tzs_41">Static Method is a method that doesn't access or modify the class state or instance state. It's a general utility function that could be placed within the class for organizational purposes.</p><p id="z6s8tzs_42">Example:</p><div class="code-block" data-lang="python">
 class Car:
     wheels = 4
 
@@ -85,7 +85,7 @@ class Car:
     @classmethod
     def display_info(cls):
         print(f'Cars have {cls.wheels} wheels.')
-</div><p id="en12kw_44">Calling the methods:</p><div class="code-block" data-lang="python">
+</div><p id="z6s8tzs_44">Calling the methods:</p><div class="code-block" data-lang="python">
 car1 = Car('Toyota', 'Corolla')
 car2 = Car('Honda', 'Civic')
 
@@ -93,10 +93,10 @@ Car.change_wheels(6)
 
 car1.display_info() 
 car2.display_info()
-</div><p id="en12kw_46">Output:</p><div class="code-block" data-lang="none">
+</div><p id="z6s8tzs_46">Output:</p><div class="code-block" data-lang="none">
 Cars have 6 wheels.
 Cars have 6 wheels.
-</div></section><section class="chapter"><h2 id="magic-methods" data-toc="magic-methods">Magic Methods</h2><p id="en12kw_48">Python supports special methods that are commonly known as &quot;magic&quot; or &quot;dunder&quot; methods because they are surrounded by double underscores <code class="code" id="en12kw_52">__</code>.</p><p id="en12kw_49">These methods allow you to define custom behavior for operations like object creation, string representation, and arithmetic operations.</p><p id="en12kw_50">Example:</p><div class="code-block" data-lang="python">
+</div></section><section class="chapter"><h2 id="magic-methods" data-toc="magic-methods">Magic Methods</h2><p id="z6s8tzs_48">Python supports special methods that are commonly known as &quot;magic&quot; or &quot;dunder&quot; methods because they are surrounded by double underscores <code class="code" id="z6s8tzs_52">__</code>.</p><p id="z6s8tzs_49">These methods allow you to define custom behavior for operations like object creation, string representation, and arithmetic operations.</p><p id="z6s8tzs_50">Example:</p><div class="code-block" data-lang="python">
 class Dog:
     def __init__(self, name, toys):
         self.name = name
@@ -107,4 +107,4 @@ class Dog:
         
     def __add__(self, more_toys):
         return self.toys += more_toys
-</div></section><div class="last-modified">Last modified: 12 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="functions.html" class="navigation-links__prev">Functions</a><a href="importing-modules.html" class="navigation-links__next">Importing Modules</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
+</div></section><div class="last-modified">Last modified: 17 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="functions.html" class="navigation-links__prev">Functions</a><a href="importing-modules.html" class="navigation-links__next">Importing Modules</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b575/app.js"></script></body></html>
